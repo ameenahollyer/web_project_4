@@ -1,0 +1,29 @@
+.experiment__title {
+    font-weight: 900;
+    text-align: center;
+    padding: 0;
+    padding-top: 34px;
+    margin: 0;
+    margin-bottom: 54px;
+    border: 0;
+}
+
+.name {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    width: 100px;
+    margin-bottom: 30px;
+}
+
+.title {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.button {
+    background-color: black;
+    width: 358px;
+    height: 50.15px;
+}

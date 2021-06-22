@@ -1,0 +1,9 @@
+.experiment {
+    background-color: #ffffff;
+    max-width: 430px;
+    max-height: 330px;
+    padding-left: 34px;
+    border-radius: 10px;
+    margin: auto;
+    z-index: 2;
+}
