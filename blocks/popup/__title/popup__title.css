@@ -1,4 +1,4 @@
-.experiment__title {
+.popup__title {
     font-weight: 900;
     text-align: center;
     padding: 0;
@@ -20,10 +20,4 @@
     padding: 0;
     margin: 0;
     border: 0;
-}
-
-.button {
-    background-color: black;
-    width: 358px;
-    height: 50.15px;
 }

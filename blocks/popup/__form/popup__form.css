@@ -1,9 +1,8 @@
-.experiment {
+.popup__form {
     background-color: #ffffff;
     max-width: 430px;
     max-height: 330px;
-    padding-left: 34px;
+    margin: auto;
     border-radius: 10px;
     margin: auto;
-    z-index: 2;
 }

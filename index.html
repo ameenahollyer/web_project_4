@@ -17,21 +17,18 @@
 
     <main>
 
-        <div class="overlay">
-            <form class="experiment">
-                <h2 class="experiment__title">Edit profile</h2>
-                <fieldset class="name">
-                    <input type="text">
-                </fieldset>
-
-                <fieldset class="title">
-                    <input type="text">
-                </fieldset>
-                <input type="text">
-                <button class="button">Save</button>
-            </form>
+        <div class="popup">
+            <div class="popup__overlay">
+                <div class="popup__container">
+                    <h2 class="popup__title">Edit profile</h2>
+                    <form class="popup__form">
+                        <fieldset class="popup__field"><input type="text" class="popup__input"></fieldset>
+                        <fieldset class="popup__field"><input type="text" class="popup__input"></fieldset>
+                        <button class="popup__button">Save</button>
+                    </form>
+                </div>
+            </div>
         </div>
-
 
         <section class="profile">
             <img class="profile__image" src="images/image.jpg" alt="image of Jacques Cousteau">
