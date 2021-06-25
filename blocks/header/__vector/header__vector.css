@@ -2,6 +2,10 @@
     margin-bottom: 41px;
 }
 
+.header__vector:hover {
+    color: blue;
+}
+
 @media screen and (max-width: 320px) {
     .header__vector {
         width: 126px;
