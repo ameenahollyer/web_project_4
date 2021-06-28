@@ -1,14 +1,19 @@
-.profile {
-    max-height: 120px;
-    padding-top: 36px;
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 50px;
-}
-
-@media screen and (max-width: 320px) {
-    .profile {
-        flex-direction: column;
-        max-height: 286px;
-    }
-}
+        .profile {
+            max-height: 120px;
+            padding-top: 36px;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 50px;
+        }
+        /*@media screen and (max-width: 1130px) {
+            .profile {
+                flex-direction: column;
+            }
+        }*/
+        
+        @media screen and (max-width: 320px) {
+            .profile {
+                flex-direction: column;
+                max-height: 286px;
+            }
+        }
