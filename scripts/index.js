@@ -15,13 +15,8 @@
          document.querySelector('.popup').classList.remove('popup_opened');
      })
 
-     saveBtn.addEventListener('click', function(event) {
-         nameInput.value = profileName.textContent;
-         captionInput.value = profileCaption.textContent;
-     });
-
      saveBtn.addEventListener('click', function() {
          profileName.textContent = nameInput.value;
-         profileTitle.textContent = titleInput.value;
+         profileCaption.textContent = captionInput.value;
          closeModal();
      })
