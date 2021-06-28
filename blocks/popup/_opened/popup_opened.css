@@ -1,3 +1,13 @@
 .popup_opened {
     display: block;
 }
+
+
+/*saveBtn.addEventListener('submit', function(e) {
+    e.preventDefault();
+    profileName.textContent=nameInput.value;
+    profileCaption.textContent=captionInput.value;
+    closePopup();
+}
+
+)
