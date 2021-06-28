@@ -8,6 +8,7 @@
     opacity: 0.2;
     border-bottom: 1px solid #000000;
     margin-bottom: 30px;
+    color: black;
 }
 
 @media screen and (max-width: 320px) {

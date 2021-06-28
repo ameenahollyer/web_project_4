@@ -3,9 +3,11 @@
      let profileName = document.querySelector('.profile__name');
      let profileCaption = document.querySelector('.profile__caption');
 
-     let formInput = document.querySelector('.popup__field');
+     let formInput = document.querySelector('.popup__form');
 
      let formElement = document.querySelector('.popup__form');
+
+     let popup = document.querySelector('.popup');
 
      document.querySelector('.profile__square').addEventListener('click', function() {
          document.querySelector('.popup').classList.add('popup_opened');
