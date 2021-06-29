@@ -1,16 +1,15 @@
 # Project 4: Around The U.S.
 
-### Overview
+**Intro**
 
-* Figma
-* Images
+This project consists of a user-interactive website with a customizable profile and picture fields.
 
-**Figma**
+**Project Link**
 
-* [Link to the project in Figma](https://www.figma.com/file/SurN1jaeEQIhuZEDMhmWWf/Sprint-4-Around-The-U.S.-desktop-mobile?node-id=0%3A1)
+* 
 
-**Images**
+**Technologies and Techniques Used**
 
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
+The project was built to be completely responsive using a base of HTML and CSS, with JavaScript used to code the more interactive parts of the site.
 
-Have fun with JavaScript!
+

@@ -5,15 +5,17 @@
             flex-direction: row;
             margin-bottom: 50px;
         }
-        /*@media screen and (max-width: 1130px) {
+        
+        @media screen and (max-width: 817px) {
             .profile {
                 flex-direction: column;
             }
-        }*/
+        }
         
-        @media screen and (max-width: 320px) {
+        @media screen and (max-width: 568px) {
             .profile {
                 flex-direction: column;
                 max-height: 286px;
+                margin-bottom: 30px;
             }
         }

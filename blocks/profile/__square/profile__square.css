@@ -10,3 +10,9 @@
 .profile__square:hover {
     opacity: 0.6;
 }
+
+@media screen and (max-width: 320px) {
+    .profile__square {
+        margin: auto;
+    }
+}
