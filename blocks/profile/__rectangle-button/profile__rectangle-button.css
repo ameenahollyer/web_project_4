@@ -3,3 +3,11 @@
     width: 22px;
     margin: 14px 64px;
 }
+
+@media screen and (max-width: 320px) {
+    .profile__rectangle-button {
+        display: block;
+        margin: auto;
+        text-align: center;
+    }
+}

@@ -1,6 +1,6 @@
 .profile__rectangle {
-    height: 50px;
-    width: 150px;
+    max-height: 50px;
+    max-width: 150px;
     border: 1px solid #ffffff;
     margin-left: auto;
 }
@@ -11,6 +11,8 @@
 
 @media screen and (max-width: 320px) {
     .profile__rectangle {
+        width: 100%;
+        display: block;
         margin: auto;
     }
 }
