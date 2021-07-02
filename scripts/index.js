@@ -9,11 +9,26 @@
 
      let popup = document.querySelector('.popup');
 
-     document.querySelector('.profile__square').addEventListener('click', function() {
+     let profileSquare = document.querySelector('.profile__square');
+
+     let popupClose = document.querySelector('.popup__close');
+
+     let nameInput = formInput.querySelector('#name');
+
+     let captionInput = formInput.querySelector('#caption');
+
+     function openForm() {
+         nameInput.value = profileName.textContent;
+         captionInput.value = profileCaption.textContent;
+     }
+
+
+     profileSquare.addEventListener('click', function() {
          document.querySelector('.popup').classList.add('popup_opened');
+         openForm();
      })
 
-     document.querySelector('.popup__close').addEventListener('click', function() {
+     popupClose.addEventListener('click', function() {
          document.querySelector('.popup').classList.remove('popup_opened');
      })
 
@@ -23,8 +38,6 @@
 
      function handleFormSubmit(evt) {
          evt.preventDefault();
-         let nameInput = formInput.querySelector('#name');
-         let captionInput = formInput.querySelector('#caption');
          profileName.textContent = nameInput.value;
          profileCaption.textContent = captionInput.value;
          closePopup()
