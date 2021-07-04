@@ -3,6 +3,7 @@
     max-width: 150px;
     border: 1px solid #ffffff;
     margin-left: auto;
+    margin-top: 13px;
 }
 
 .profile__rectangle:hover {

@@ -1,3 +1,4 @@
 .profile__square-button {
     margin: 7px;
+    align-self: flex-end;
 }
