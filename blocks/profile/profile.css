@@ -3,12 +3,22 @@
             display: flex;
             flex-direction: row;
             margin-bottom: 50px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            max-width: 880px;
         }
         
         @media screen and (max-width: 580px) {
             .profile {
                 flex-direction: column;
                 max-height: 286px;
-                margin-bottom: 30px;
+                margin-bottom: 36px;
+            }
+        }
+        
+        @media screen and (max-width: 320px) {
+            .profile {
+                padding-top: 28px;
             }
         }

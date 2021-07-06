@@ -5,3 +5,10 @@
     /*grid-template-columns: 1fr 1fr 1fr;*/
     grid-gap: 16px;
 }
+
+@media screen and (max-width: 320px) {
+    .elements {
+        margin: 19px;
+        margin-bottom: 50px;
+    }
+}

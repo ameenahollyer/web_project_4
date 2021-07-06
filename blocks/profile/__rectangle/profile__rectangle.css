@@ -1,9 +1,10 @@
 .profile__rectangle {
     max-height: 50px;
     max-width: 150px;
-    border: 1px solid #ffffff;
+    border: 2px solid #ffffff;
     margin-left: auto;
     margin-top: 13px;
+    cursor: pointer;
 }
 
 .profile__rectangle:hover {
@@ -12,8 +13,10 @@
 
 @media screen and (max-width: 320px) {
     .profile__rectangle {
+        max-width: 282px;
         width: 100%;
         display: block;
-        margin: auto;
+        margin-left: 19px;
+        margin-right: 19px;
     }
 }

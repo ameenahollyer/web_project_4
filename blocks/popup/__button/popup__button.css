@@ -9,10 +9,11 @@
     margin: auto;
     margin-top: 12px;
     margin-bottom: 36px;
+    cursor: pointer;
 }
 
 .popup__button:hover {
-    opacity: 0.6;
+    opacity: 0.8;
 }
 
 @media screen and (max-width: 320px) {

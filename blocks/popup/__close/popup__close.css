@@ -2,6 +2,7 @@
         position: absolute;
         left: 420px;
         top: -45px;
+        cursor: pointer;
     }
     
     .popup__close:hover {
@@ -10,7 +11,7 @@
     
     @media screen and (max-width: 320px) {
         .popup__close {
-            left: 490px;
+            left: 300px;
             top: -50px;
             height: 26px;
             width: 26px;

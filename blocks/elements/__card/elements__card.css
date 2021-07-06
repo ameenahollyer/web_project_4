@@ -1,7 +1,5 @@
 .elements__card {
     background-color: #ffffff;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
     border-radius: 10px;
+    overflow: hidden;
 }

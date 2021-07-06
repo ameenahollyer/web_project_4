@@ -1,7 +1,6 @@
 .popup__container {
     background-color: #ffffff;
     width: 430px;
-    height: 330px;
     border-radius: 10px;
     margin: auto;
     padding: 0 36px;
@@ -13,7 +12,6 @@
     .popup__container {
         padding: 0 19px;
         width: 282px;
-        height: 322px;
         margin: 123px 22px;
     }
 }

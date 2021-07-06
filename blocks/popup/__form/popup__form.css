@@ -1,8 +1,7 @@
 .popup__form {
-    font-family: 'Inter';
+    font-family: 'Inter' 'Arial', 'sans-serif';
     background-color: #ffffff;
     max-width: 430px;
-    max-height: 330px;
     margin: auto;
     border-radius: 10px;
 }
