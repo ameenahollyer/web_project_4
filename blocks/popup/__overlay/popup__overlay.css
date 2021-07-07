@@ -1,6 +1,5 @@
 .popup__overlay {
-    background: #000;
-    opacity: 0.5;
+    background: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
