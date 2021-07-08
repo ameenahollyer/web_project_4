@@ -1,11 +1,13 @@
 .profile__block {
-    display: grid;
-    grid-template-areas: "title button" "caption caption";
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
 }
 
 @media screen and (max-width: 320px) {
     .profile {
         display: flex;
         justify-content: center;
+        margin-left: 0;
     }
 }

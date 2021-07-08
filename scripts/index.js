@@ -18,19 +18,15 @@
      let captionInput = formInput.querySelector('#caption');
 
      function openForm() {
+         popup.classList.add('popup_opened');
          nameInput.value = profileName.textContent;
          captionInput.value = profileCaption.textContent;
      }
 
 
-     profileSquare.addEventListener('click', function() {
-         document.querySelector('.popup').classList.add('popup_opened');
-         openForm();
-     })
+     profileSquare.addEventListener('click', openForm);
 
-     popupClose.addEventListener('click', function() {
-         document.querySelector('.popup').classList.remove('popup_opened');
-     })
+     popupClose.addEventListener('click', closePopup);
 
      function closePopup() {
          popup.classList.remove('popup_opened');

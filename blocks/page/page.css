@@ -8,11 +8,12 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-@media screen and (max-width: 990px) {
+
+/*@media screen and (max-width: 990px) {
     .page {
         max-width: 690px;
     }
-}
+}*/
 
 @media screen and (max-width: 580px) {
     .page {
