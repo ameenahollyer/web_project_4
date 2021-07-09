@@ -1,8 +1,9 @@
 .elements__button {
-    height: 19px;
-    width: 21px;
     align-items: baseline;
     cursor: pointer;
+    padding: 0;
+    border: 0;
+    background-color: #fff;
 }
 
 .elements__button:hover {

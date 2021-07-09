@@ -1,19 +1,22 @@
-.profile__rectangle {
-    max-height: 50px;
-    max-width: 150px;
+.profile__add-button {
+    height: 50px;
+    width: 150px;
     border: 2px solid #ffffff;
     margin-left: auto;
     margin-top: 13px;
     cursor: pointer;
     align-items: center;
+    display: flex;
+    padding: 0;
+    background-color: black;
 }
 
-.profile__rectangle:hover {
+.profile__add-button:hover {
     opacity: 0.6;
 }
 
 @media screen and (max-width: 320px) {
-    .profile__rectangle {
+    .profile__add-button {
         max-width: 282px;
         min-height: 50px;
         width: 100%;
