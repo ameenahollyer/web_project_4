@@ -9,7 +9,7 @@
 
      let popup = document.querySelector('.popup');
 
-     let profileSquare = document.querySelector('.profile__square');
+     let profileSquare = document.querySelector('.profile__edit-button');
 
      let popupClose = document.querySelector('.popup__close');
 

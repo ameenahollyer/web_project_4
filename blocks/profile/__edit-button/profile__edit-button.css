@@ -1,4 +1,4 @@
-.profile__square {
+.profile__edit-button {
     height: 24px;
     width: 24px;
     border: 1px solid #FFFFFF;
@@ -7,14 +7,15 @@
     cursor: pointer;
     display: flex;
     margin-left: 18px;
+    background-color: black;
 }
 
-.profile__square:hover {
+.profile__edit-button:hover {
     opacity: 0.6;
 }
 
 @media screen and (max-width: 320px) {
-    .profile__square {
+    .profile__edit-button {
         height: 18px;
         width: 18px;
         margin-top: 5px;
