@@ -14,12 +14,11 @@
     }
 }
 
-
-/*@media screen and (max-width: 700px) {
+@media screen and (max-width: 700px) {
     .page {
-        max-width: 480px;
+        max-width: 550px;
     }
-}*/
+}
 
 @media screen and (max-width: 320px) {
     .page {
