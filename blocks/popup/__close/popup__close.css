@@ -3,6 +3,11 @@
         right: -40px;
         top: -50px;
         cursor: pointer;
+        padding: 0;
+        margin: 0;
+        background-color: black;
+        border: 0;
+        background: none;
     }
     
     .popup__close:hover {
