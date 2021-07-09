@@ -3,13 +3,9 @@
             display: flex;
             flex-direction: row;
             margin-bottom: 50px;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            overflow: hidden;
-            max-width: 880px;
         }
         
-        @media screen and (max-width: 580px) {
+        @media screen and (max-width: 870px) {
             .profile {
                 flex-direction: column;
                 max-height: 286px;
