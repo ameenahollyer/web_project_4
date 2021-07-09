@@ -5,7 +5,7 @@
 }
 
 @media screen and (max-width: 320px) {
-    .profile {
+    .profile__block {
         display: flex;
         justify-content: center;
         margin-left: 0;

@@ -17,8 +17,7 @@
         max-width: 282px;
         min-height: 50px;
         width: 100%;
-        display: block;
-        margin-left: 19px;
-        margin-right: 19px;
+        display: flex;
+        margin: auto;
     }
 }

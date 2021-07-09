@@ -4,14 +4,13 @@
             flex-direction: row;
             margin-bottom: 50px;
         }
-        
-        @media screen and (max-width: 870px) {
+        /*@media screen and (max-width: 870px) {
             .profile {
                 flex-direction: column;
                 max-height: 286px;
                 margin-bottom: 36px;
             }
-        }
+        }*/
         
         @media screen and (max-width: 320px) {
             .profile {
