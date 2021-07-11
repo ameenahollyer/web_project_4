@@ -8,7 +8,7 @@
     align-items: center;
     display: flex;
     padding: 0;
-    background-color: black;
+    background-color: transparent;
 }
 
 .profile__add-button:hover {
@@ -21,11 +21,18 @@
     }
 }
 
+@media screen and (max-width: 574px) {
+    .profile__add-button {
+        max-width: 150px;
+        margin: auto;
+    }
+}
+
 @media screen and (max-width: 320px) {
     .profile__add-button {
+        width: 100%;
         max-width: 282px;
         min-height: 50px;
-        width: 100%;
         display: flex;
         margin: auto;
     }

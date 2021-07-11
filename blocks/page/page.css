@@ -3,7 +3,7 @@
     max-width: 880px;
     margin: auto;
     padding-top: 45px;
-    font-family: 'Inter', 'Arial', 'sans-serif';
+    font-family: 'Inter', 'Arial', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -17,6 +17,13 @@
 @media screen and (max-width: 700px) {
     .page {
         max-width: 550px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .page {
+        max-width: 450px;
+        max-width: 420px;
     }
 }
 
