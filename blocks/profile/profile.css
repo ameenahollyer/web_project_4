@@ -13,9 +13,16 @@
             }
         }*/
         
-        @media screen and (max-width: 575px) {
+        @media screen and (max-width: 576px) {
             .profile {
                 flex-direction: column;
                 padding-top: 28px;
+                margin-bottom: 25px;
+            }
+        }
+        
+        @media screen and (max-width: 320px) {
+            .profile {
+                margin-bottom: 36px;
             }
         }

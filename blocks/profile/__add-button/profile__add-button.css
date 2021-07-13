@@ -33,7 +33,5 @@
         width: 100%;
         max-width: 282px;
         min-height: 50px;
-        display: flex;
-        margin: auto;
     }
 }

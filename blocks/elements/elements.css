@@ -6,7 +6,7 @@
     grid-gap: 16px;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 435px) {
     .elements {
         margin: 19px;
         margin-bottom: 50px;

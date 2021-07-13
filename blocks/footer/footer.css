@@ -2,6 +2,12 @@
     margin-bottom: 60px;
 }
 
+@media screen and (max-width: 435px) {
+    .footer {
+        margin-left: 15px;
+    }
+}
+
 @media screen and (max-width: 320px) {
     .footer {
         margin: 0 19px 36px;

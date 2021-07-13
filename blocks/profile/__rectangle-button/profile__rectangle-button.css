@@ -5,7 +5,6 @@
 @media screen and (max-width: 320px) {
     .profile__rectangle-button {
         display: flex;
-        margin: auto;
         align-self: center;
     }
 }
