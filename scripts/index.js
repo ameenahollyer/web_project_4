@@ -1,7 +1,3 @@
-////////////////
-//Templates
-///////////////
-
 const initialCards = [{
         name: "Yosemite Valley",
         link: "https://code.s3.yandex.net/web-code/yosemite.jpg"
@@ -28,27 +24,39 @@ const initialCards = [{
     }
 ];
 
+////////////////
+//Templates
+///////////////
+
+const cardTemplate = document.querySelector('#card-template').content.querySelector('.elements__card');
+
 //////////////////
 //Declarations
 /////////////////
-let saveBtn = document.querySelector('#saveBtn');
+const saveBtn = document.querySelector('#saveBtn');
 
-let profileName = document.querySelector('.profile__name');
-let profileCaption = document.querySelector('.profile__caption');
+const profileName = document.querySelector('.profile__name');
+const profileCaption = document.querySelector('.profile__caption');
 
-let formInput = document.querySelector('.popup__form');
+const formInput = document.querySelector('.popup__form');
 
-let formElement = document.querySelector('.popup__form');
+const formElement = document.querySelector('.popup__form');
 
-let popup = document.querySelector('.popup');
+const popup = document.querySelector('.popup');
 
-let profileSquare = document.querySelector('.profile__edit-button');
+const profileSquare = document.querySelector('.profile__edit-button');
 
-let popupClose = document.querySelector('.popup__close');
+const popupClose = document.querySelector('.popup__close');
 
-let nameInput = formInput.querySelector('#name');
+const nameInput = formInput.querySelector('#name');
 
-let captionInput = formInput.querySelector('#caption');
+const captionInput = formInput.querySelector('#caption');
+
+/////////////////
+/// Wrappers
+/////////////////
+
+const placesWrap = document.querySelector('.elements__card');
 
 
 
@@ -83,3 +91,12 @@ formElement.addEventListener('submit', handleFormSubmit);
 profileSquare.addEventListener('click', openForm);
 
 popupClose.addEventListener('click', closePopup);
+
+initialCards.forEach((data => {
+    const cardElement = cardTemplate.cloneNode(true);
+
+    cardElement.querySelector('.elements__image').style.backgroundImage = `url($[data.link])`;
+    cardElement.querySelector('.elements__place').textContent = data.name;
+
+    placesWrap.prepend(cardElement);
+}));

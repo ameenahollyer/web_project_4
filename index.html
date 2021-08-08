@@ -47,48 +47,6 @@
         </section>
 
         <section class="elements">
-            <div class="elements__card">
-                <img class="elements__image" src="images/yosemite.jpg" alt="picture of Yosemite">
-                <div class="elements__caption">
-                    <h2 class="elements__place">Yosemite Valley</h2>
-                    <button class="elements__button" type="button"><img class="elements__heart" src="images/heart.svg" alt="like button icon"></button>
-                </div>
-            </div>
-            <div class="elements__card">
-                <img class="elements__image" src="images/lake-louise.jpg" alt="picture of Lake Louise">
-                <div class="elements__caption">
-                    <h2 class="elements__place">Lake Louise</h2>
-                    <button class="elements__button" type="button"><img class="elements__heart" src="images/heart.svg" alt="like button icon"></button>
-                </div>
-            </div>
-            <div class="elements__card">
-                <img class="elements__image" src="images/bald-mountains.jpg" alt="picture of Bald Mountains">
-                <div class="elements__caption">
-                    <h2 class="elements__place">Bald Mountains</h2>
-                    <button class="elements__button" type="button"><img class="elements__heart" src="images/heart.svg" alt="like button icon"></button>
-                </div>
-            </div>
-            <div class="elements__card">
-                <img class="elements__image" src="images/latemar.jpg" alt="picture of Latemar">
-                <div class="elements__caption">
-                    <h2 class="elements__place">Latemar</h2>
-                    <button class="elements__button" type="button"><img class="elements__heart" src="images/heart.svg" alt="like button icon"></button>
-                </div>
-            </div>
-            <div class="elements__card">
-                <img class="elements__image" src="images/vanoise-naitions.jpg" alt="picture of Vanoise">
-                <div class="elements__caption">
-                    <h2 class="elements__place">Vanoise National</h2>
-                    <button class="elements__button" type="button"><img class="elements__heart" src="images/heart.svg" alt="like button icon"></button>
-                </div>
-            </div>
-            <div class="elements__card">
-                <img class="elements__image" src="images/lago-di-braise.jpg" alt="picture of Lago Di Braise">
-                <div class="elements__caption">
-                    <h2 class="elements__place">Lago di Braies</h2>
-                    <button class="elements__button" type="button"><img class="elements__heart" src="images/heart.svg" alt="like button icon"></button>
-                </div>
-            </div>
         </section>
     </main>
     <footer class="footer">
@@ -96,8 +54,14 @@
     </footer>
 
     <script src="scripts/index.js"></script>
-
-    <template id="card-template">
+    <template>
+    <div class="elements__card">
+        <img class="elements__image">
+        <div class="elements__caption">
+            <h2 class="elements__place"></h2>
+            <button class="elements__button" type="button"><img class="elements__heart" src="images/heart.svg" alt="like button icon"></button>
+        </div>
+    </div>
     </template>
 
 </body>
