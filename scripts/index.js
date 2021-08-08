@@ -28,7 +28,8 @@ const initialCards = [{
 //Templates
 ///////////////
 
-const cardTemplate = document.querySelector('#card-template').content.querySelector('.elements__card');
+const cardTemplate = document.querySelector('#card-template').content;
+
 
 //////////////////
 //Declarations
