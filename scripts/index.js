@@ -85,7 +85,7 @@ function handleFormSubmit(evt) {
 }
 
 function activeLikeButton() {
-    likeButton.classList.add('.elements__button_active');
+    likeButton.classList.toggle('.elements__button_active');
 }
 
 
@@ -102,7 +102,7 @@ popupClose.addEventListener('click', closePopup);
 initialCards.forEach((data => {
     const cardElement = cardTemplate.cloneNode(true);
 
-    cardElement.querySelector('.elements__image').style.backgroundImage = `url($[data.link])`;
+    cardElement.querySelector('.elements__image').src = data.link;
     cardElement.querySelector('.elements__place').textContent = data.name;
 
     placesWrap.prepend(cardElement);
