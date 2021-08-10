@@ -84,8 +84,8 @@ function handleFormSubmit(evt) {
     closePopup()
 }
 
-function activeLikeButton() {
-    likeButton.classList.toggle('.elements__button_active');
+function activeLikeButton(evt) {
+    evt.target.classList.toggle('.elements__button_active');
 }
 
 
