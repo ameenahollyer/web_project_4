@@ -57,7 +57,7 @@ const captionInput = formInput.querySelector('#caption');
 /// Wrappers
 /////////////////
 
-const placesWrap = document.querySelector('.elements__card');
+const placesWrap = document.querySelector('.elements');
 
 
 
