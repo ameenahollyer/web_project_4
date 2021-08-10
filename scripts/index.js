@@ -53,6 +53,8 @@ const nameInput = formInput.querySelector('#name');
 
 const captionInput = formInput.querySelector('#caption');
 
+const likeButton = document.querySelector('.elements__button');
+
 /////////////////
 /// Wrappers
 /////////////////
@@ -82,6 +84,10 @@ function handleFormSubmit(evt) {
     closePopup()
 }
 
+function activeLikeButton() {
+    likeButton.classList.add('.elements__button_active');
+}
+
 
 /////////////////
 ///Event Handlers
@@ -101,3 +107,5 @@ initialCards.forEach((data => {
 
     placesWrap.prepend(cardElement);
 }));
+
+likeButton.addEventListener('click', activeLikeButton);
