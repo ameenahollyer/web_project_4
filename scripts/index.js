@@ -53,7 +53,7 @@ const nameInput = formInput.querySelector('#name');
 
 const captionInput = formInput.querySelector('#caption');
 
-const likeButton = document.querySelector('.elements__button');
+const likeButton = cardTemplate.querySelector('.elements__button');
 
 /////////////////
 /// Wrappers
