@@ -53,7 +53,7 @@ const nameInput = formInput.querySelector('#name');
 
 const captionInput = formInput.querySelector('#caption');
 
-const likeButton = cardTemplate.querySelector('.elements__button');
+//const likeButton = cardTemplate.querySelector('.elements__button');
 
 /////////////////
 /// Wrappers
@@ -102,10 +102,14 @@ popupClose.addEventListener('click', closePopup);
 initialCards.forEach((data => {
     const cardElement = cardTemplate.cloneNode(true);
 
+    const likeButton = cardElement.querySelector('.elements__button');
+
+    likeButton.addEventListener('click', activeLikeButton);
+
     cardElement.querySelector('.elements__image').src = data.link;
     cardElement.querySelector('.elements__place').textContent = data.name;
 
     placesWrap.prepend(cardElement);
 }));
 
-likeButton.addEventListener('click', activeLikeButton);
+//likeButton.addEventListener('click', activeLikeButton);
