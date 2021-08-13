@@ -85,7 +85,7 @@ function handleFormSubmit(evt) {
 }
 
 function activeLikeButton(evt) {
-    evt.target.classList.toggle('.elements__button_active');
+    evt.target.classList.toggle('elements__button_active');
 }
 
 
