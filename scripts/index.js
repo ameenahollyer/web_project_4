@@ -39,19 +39,29 @@ const saveBtn = document.querySelector('#saveBtn');
 const profileName = document.querySelector('.profile__name');
 const profileCaption = document.querySelector('.profile__caption');
 
-const formInput = document.querySelector('.popup__form');
+//const formElement = document.querySelector('.popup__form');
 
-const formElement = document.querySelector('.popup__form');
+const editFormInput = document.querySelector('.popup__form_edit');
 
-const popup = document.querySelector('.popup');
+const addFormInput = document.querySelector('.popup__form_add');
+
+const editFormModalWindow = document.querySelector('.popup_type_edit');
+
+const addFormModalWindow = document.querySelector('.popup_type_add');
 
 const profileSquare = document.querySelector('.profile__edit-button');
 
 const popupClose = document.querySelector('.popup__close');
 
-const nameInput = formInput.querySelector('#name');
+const nameInput = editFormInput.querySelector('#name');
 
-const captionInput = formInput.querySelector('#caption');
+const captionInput = editFormInput.querySelector('#caption');
+
+const placeInput = addFormInput.querySelector('#title');
+
+const linkInput = addFormInput.querySelector('#link');
+
+const addButton = document.querySelector('.profile__add-button');
 
 //const likeButton = cardTemplate.querySelector('.elements__button');
 
@@ -68,13 +78,13 @@ const placesWrap = document.querySelector('.elements');
 /////////////////
 
 function openForm() {
-    popup.classList.add('popup_opened');
+    editFormModalWindow.classList.add('popup_opened');
     nameInput.value = profileName.textContent;
     captionInput.value = profileCaption.textContent;
 }
 
 function closePopup() {
-    popup.classList.remove('popup_opened');
+    editFormModalWindow.classList.remove('popup_opened');
 }
 
 function handleFormSubmit(evt) {
@@ -93,9 +103,11 @@ function activeLikeButton(evt) {
 ///Event Handlers
 ////////////////
 
-formElement.addEventListener('submit', handleFormSubmit);
+editFormInput.addEventListener('submit', handleFormSubmit);
 
 profileSquare.addEventListener('click', openForm);
+
+addButton.addEventListener('click', openForm);
 
 popupClose.addEventListener('click', closePopup);
 
