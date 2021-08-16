@@ -119,6 +119,19 @@ function renderCard(cardEl) {
     placesWrap.prepend(cardEl)
 }
 
+function generateCard(card) {
+    const cardElement = cardTemplate.cloneNode(true);
+
+    const likeButton = cardElement.querySelector('.elements__button');
+
+    likeButton.addEventListener('click', activeLikeButton);
+
+    cardElement.querySelector('.elements__image').src = card.link;
+    cardElement.querySelector('.elements__place').textContent = card.name;
+
+    return cardElement;
+}
+
 
 /////////////////
 ///Event Handlers
@@ -134,15 +147,8 @@ editPopupClose.addEventListener('click', closeEditPopup);
 
 addPopupClose.addEventListener('click', closeAddPopup);
 
-initialCards.forEach((data => {
-    const cardElement = cardTemplate.cloneNode(true);
-
-    const likeButton = cardElement.querySelector('.elements__button');
-
-    likeButton.addEventListener('click', activeLikeButton);
-
-    cardElement.querySelector('.elements__image').src = data.link;
-    cardElement.querySelector('.elements__place').textContent = data.name;
+initialCards.forEach((card => {
+    const cardElement = generateCard(card);
 
     renderCard(cardElement);
 
@@ -150,3 +156,6 @@ initialCards.forEach((data => {
 }));
 
 //likeButton.addEventListener('click', activeLikeButton);
+
+addButton.addEventListener('submit', renderCard(card));
+addButton.addEventListener('submit', generateCard(card));
