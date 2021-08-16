@@ -115,6 +115,10 @@ function activeLikeButton(evt) {
     evt.target.classList.toggle('elements__button_active');
 }
 
+function renderCard(cardEl) {
+    placesWrap.prepend(cardEl)
+}
+
 
 /////////////////
 ///Event Handlers
@@ -128,6 +132,8 @@ addButton.addEventListener('click', openAddForm);
 
 editPopupClose.addEventListener('click', closeEditPopup);
 
+addPopupClose.addEventListener('click', closeAddPopup);
+
 initialCards.forEach((data => {
     const cardElement = cardTemplate.cloneNode(true);
 
@@ -138,7 +144,9 @@ initialCards.forEach((data => {
     cardElement.querySelector('.elements__image').src = data.link;
     cardElement.querySelector('.elements__place').textContent = data.name;
 
-    placesWrap.prepend(cardElement);
+    renderCard(cardElement);
+
+    //placesWrap.prepend(cardElement);
 }));
 
 //likeButton.addEventListener('click', activeLikeButton);
