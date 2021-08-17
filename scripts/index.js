@@ -93,7 +93,7 @@ function openEditForm() {
 function openAddForm() {
     addFormModalWindow.classList.add('popup_opened');
     placeInput.value = cardName.textContent;
-    linkInput.value = cardImage.textContent;
+    linkInput.value = cardImage.value;
 }
 
 function closeEditPopup() {
@@ -113,8 +113,12 @@ function editFormSubmit(evt) {
 
 function addFormSubmit(evt) {
     evt.preventDefault();
-    generateCard(card);
-    renderCard(card);
+    const newCard = {
+        "name": placeInput.value,
+        "link": linkInput.value
+    }
+    generateCard(newCard);
+    renderCard(newCard);
     closeAddPopup();
 }
 
@@ -162,6 +166,8 @@ initialCards.forEach((card => {
     //placesWrap.prepend(cardElement);
 }));
 
-addForm.addEventListener('submit', addFormSubmit(evt));
+//addForm.addEventListener('submit', (evt) => addFormSubmit);
+
+addForm.addEventListener('submit', addFormSubmit);
 
 //likeButton.addEventListener('click', activeLikeButton);
