@@ -65,7 +65,7 @@ const linkInput = addForm.querySelector('#link');
 
 const addButton = document.querySelector('.profile__add-button');
 
-const cardName = document.querySelector('elements__place');
+const cardName = document.querySelector('.elements__place');
 
 const cardImage = document.querySelector('.elements__image');
 
@@ -162,6 +162,6 @@ initialCards.forEach((card => {
     //placesWrap.prepend(cardElement);
 }));
 
-addForm.addEventListener('submit', () => addFormSubmit);
+addForm.addEventListener('submit', addFormSubmit(evt));
 
 //likeButton.addEventListener('click', activeLikeButton);
