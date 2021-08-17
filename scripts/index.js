@@ -41,27 +41,27 @@ const profileCaption = document.querySelector('.profile__caption');
 
 //const formElement = document.querySelector('.popup__form');
 
-const editFormInput = document.querySelector('.popup__form_edit');
+const editForm = document.querySelector('.popup__form_type_edit');
 
-const addFormInput = document.querySelector('.popup__form_add');
+const addForm = document.querySelector('.popup__form_type_add');
 
 const editFormModalWindow = document.querySelector('.popup_type_edit');
 
 const addFormModalWindow = document.querySelector('.popup_type_add');
 
-const profileSquare = document.querySelector('.profile__edit-button');
+const editButton = document.querySelector('.profile__edit-button');
 
 const editPopupClose = document.querySelector('.popup__close_edit');
 
 const addPopupClose = document.querySelector('.popup__close_add');
 
-const nameInput = editFormInput.querySelector('#name');
+const nameInput = editForm.querySelector('#name');
 
-const captionInput = editFormInput.querySelector('#caption');
+const captionInput = editForm.querySelector('#caption');
 
-const placeInput = addFormInput.querySelector('#title');
+const placeInput = addForm.querySelector('#title');
 
-const linkInput = addFormInput.querySelector('#link');
+const linkInput = addForm.querySelector('#link');
 
 const addButton = document.querySelector('.profile__add-button');
 
@@ -104,11 +104,18 @@ function closeAddPopup() {
     addFormModalWindow.classList.remove('popup_opened');
 }
 
-function handleFormSubmit(evt) {
+function editFormSubmit(evt) {
     evt.preventDefault();
     profileName.textContent = nameInput.value;
     profileCaption.textContent = captionInput.value;
     closeEditPopup()
+}
+
+function addFormSubmit(evt) {
+    evt.preventDefault();
+    generateCard(card);
+    renderCard(card);
+    closeAddPopup();
 }
 
 function activeLikeButton(evt) {
@@ -137,9 +144,9 @@ function generateCard(card) {
 ///Event Handlers
 ////////////////
 
-editFormInput.addEventListener('submit', handleFormSubmit);
+editForm.addEventListener('submit', editFormSubmit);
 
-profileSquare.addEventListener('click', openEditForm);
+editButton.addEventListener('click', openEditForm);
 
 addButton.addEventListener('click', openAddForm);
 
@@ -155,7 +162,6 @@ initialCards.forEach((card => {
     //placesWrap.prepend(cardElement);
 }));
 
-//likeButton.addEventListener('click', activeLikeButton);
+addForm.addEventListener('submit', () => addFormSubmit);
 
-addButton.addEventListener('submit', renderCard(card));
-addButton.addEventListener('submit', generateCard(card));
+//likeButton.addEventListener('click', activeLikeButton);
