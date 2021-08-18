@@ -65,10 +65,6 @@ const linkInput = addForm.querySelector('#link');
 
 const addButton = document.querySelector('.profile__add-button');
 
-const cardName = document.querySelector('.elements__place');
-
-const cardImage = document.querySelector('.elements__image');
-
 
 //const likeButton = cardTemplate.querySelector('.elements__button');
 
@@ -92,8 +88,6 @@ function openEditForm() {
 
 function openAddForm() {
     addFormModalWindow.classList.add('popup_opened');
-    placeInput.value = cardName.textContent;
-    linkInput.value = cardImage.value;
 }
 
 function closeEditPopup() {
@@ -111,16 +105,6 @@ function editFormSubmit(evt) {
     closeEditPopup()
 }
 
-function addFormSubmit(evt) {
-    evt.preventDefault();
-    const newCard = {
-        "name": placeInput.value,
-        "link": linkInput.value
-    }
-    generateCard(newCard);
-    renderCard(newCard);
-    closeAddPopup();
-}
 
 function activeLikeButton(evt) {
     evt.target.classList.toggle('elements__button_active');
@@ -135,7 +119,24 @@ function generateCard(card) {
 
     const likeButton = cardElement.querySelector('.elements__button');
 
+    const cardName = document.querySelector('.elements__place');
+
+    const cardImage = document.querySelector('.elements__image');
+
+    function addFormSubmit(evt) {
+        evt.preventDefault();
+        const newCard = {
+            "name": placeInput.value,
+            "link": linkInput.value
+        }
+        generateCard(newCard);
+        renderCard(newCard);
+        closeAddPopup();
+    }
+
     likeButton.addEventListener('click', activeLikeButton);
+
+    addForm.addEventListener('submit', () => submit(card));
 
     cardElement.querySelector('.elements__image').src = card.link;
     cardElement.querySelector('.elements__place').textContent = card.name;
@@ -166,8 +167,11 @@ initialCards.forEach((card => {
     //placesWrap.prepend(cardElement);
 }));
 
+
 //addForm.addEventListener('submit', (evt) => addFormSubmit);
 
-addForm.addEventListener('submit', addFormSubmit);
+//addForm.addEventListener('submit', addFormSubmit);
+
+
 
 //likeButton.addEventListener('click', activeLikeButton);
