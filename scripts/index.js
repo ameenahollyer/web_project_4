@@ -107,8 +107,8 @@ function addFormSubmit(evt) {
         "name": placeInput.value,
         "link": linkInput.value
     }
-    generateCard(newCard);
-    renderCard(newCard);
+    const newCardElement = generateCard(newCard);
+    renderCard(newCardElement);
     closeAddPopup();
 }
 
@@ -126,15 +126,7 @@ function generateCard(card) {
 
     const likeButton = cardElement.querySelector('.elements__button');
 
-    const cardName = cardElement.querySelector('.elements__place');
-
-    const cardImage = cardElement.querySelector('.elements__image');
-
     likeButton.addEventListener('click', activeLikeButton);
-
-    //addForm.addEventListener('submit', addFormSubmit);
-
-    addForm.addEventListener('submit', (addFormSubmit) => (card));
 
     cardElement.querySelector('.elements__image').src = card.link;
     cardElement.querySelector('.elements__place').textContent = card.name;
@@ -148,6 +140,8 @@ function generateCard(card) {
 ////////////////
 
 editForm.addEventListener('submit', editFormSubmit);
+
+addForm.addEventListener('submit', addFormSubmit);
 
 editButton.addEventListener('click', openEditForm);
 
