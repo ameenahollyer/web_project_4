@@ -128,7 +128,8 @@ function generateCard(card) {
 
     likeButton.addEventListener('click', activeLikeButton);
 
-    cardElement.querySelector('.elements__image').src = card.link;
+    const imageEl = cardElement.querySelector('.elements__image');
+    imageEl.src = card.link;
     cardElement.querySelector('.elements__place').textContent = card.name;
 
     return cardElement;
