@@ -1,0 +1,11 @@
+.elements__delete-button {
+    z-index: 1;
+    width: 18px;
+    height: 5px;
+    position: absolute;
+    top: 347px;
+    left: 748px;
+    background: #fff;
+    /*background-image: url(../../../images/deleteBtn.svg);*/
+    background-image: url(../../../images/deleteButtonJpg.jpg);
+}

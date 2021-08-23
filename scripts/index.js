@@ -126,6 +126,8 @@ function generateCard(card) {
 
     const likeButton = cardElement.querySelector('.elements__button');
 
+    const deleteButton = cardElement.querySelector('.elements__delete-button');
+
     likeButton.addEventListener('click', activeLikeButton);
 
     const imageEl = cardElement.querySelector('.elements__image');
