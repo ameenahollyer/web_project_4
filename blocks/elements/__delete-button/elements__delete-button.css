@@ -1,11 +1,20 @@
 .elements__delete-button {
     z-index: 1;
+    height: 19px;
     width: 18px;
-    height: 5px;
     position: absolute;
     top: 347px;
     left: 748px;
-    background: #fff;
-    /*background-image: url(../../../images/deleteBtn.svg);*/
-    background-image: url(../../../images/deleteButtonJpg.jpg);
+    /*background-image: url(../../../images/deleteBtn.svg);
+    /*background-image: url(../../../images/deleteButtonJpg.jpg);*/
+    background-image: url(../../../images/wholeDeleteBtn.svg);
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    color: transparent;
+    cursor: pointer;
+}
+
+.elements__delete-button:hover {
+    opacity: 0.5;
 }
