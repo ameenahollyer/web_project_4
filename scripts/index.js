@@ -32,7 +32,7 @@ const cardTemplate = document.querySelector('#card-template').content;
 
 
 //////////////////
-//Declarations
+//Elements
 /////////////////
 const saveBtn = document.querySelector('#saveBtn');
 
@@ -94,6 +94,10 @@ function closeAddPopup() {
     addFormModalWindow.classList.remove('popup_opened');
 }
 
+function togglePopup(popup) {
+    popup.classList.toggle('popup_opened');
+}
+
 function editFormSubmit(evt) {
     evt.preventDefault();
     profileName.textContent = nameInput.value;
@@ -146,7 +150,7 @@ editForm.addEventListener('submit', editFormSubmit);
 
 addForm.addEventListener('submit', addFormSubmit);
 
-editButton.addEventListener('click', openEditForm);
+editButton.addEventListener('click', () => togglePopup(editFormModalWindow));
 
 addButton.addEventListener('click', openAddForm);
 
