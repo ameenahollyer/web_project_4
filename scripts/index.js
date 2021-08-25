@@ -47,6 +47,8 @@ const editFormModalWindow = document.querySelector('.popup_type_edit');
 
 const addFormModalWindow = document.querySelector('.popup_type_add');
 
+const previewModalWindow = document.querySelector('.popup_type_preview');
+
 const editButton = document.querySelector('.profile__edit-button');
 
 const editPopupClose = document.querySelector('.popup__close_edit');
@@ -62,6 +64,8 @@ const placeInput = addForm.querySelector('#title');
 const linkInput = addForm.querySelector('#link');
 
 const addButton = document.querySelector('.profile__add-button');
+
+const previewImageElement = previewModalWindow.querySelector('.popup__preview-image');
 
 
 /////////////////
@@ -125,6 +129,7 @@ function renderCard(cardEl) {
     placesWrap.prepend(cardEl)
 }
 
+
 function generateCard(card) {
     const cardElement = cardTemplate.cloneNode(true);
 
@@ -132,11 +137,21 @@ function generateCard(card) {
 
     const deleteButton = cardElement.querySelector('.elements__delete-button');
 
+    deleteButton.addEventListener("click", function() {
+        const card = deleteButton.closest(".elements__card");
+        card.remove();
+    });
+
     likeButton.addEventListener('click', activeLikeButton);
 
     const imageEl = cardElement.querySelector('.elements__image');
     imageEl.src = card.link;
     cardElement.querySelector('.elements__place').textContent = card.name;
+
+    imageEl.addEventListener('click', () => {
+        togglePopup(previewModalWindow);
+        previewImageElement.src = card.link;
+    });
 
     return cardElement;
 }
@@ -152,11 +167,19 @@ addForm.addEventListener('submit', addFormSubmit);
 
 editButton.addEventListener('click', () => togglePopup(editFormModalWindow));
 
-addButton.addEventListener('click', openAddForm);
+editPopupClose.addEventListener('click', () => togglePopup(editFormModalWindow));
 
-editPopupClose.addEventListener('click', closeEditPopup);
+addButton.addEventListener('click', () => togglePopup(addFormModalWindow));
 
-addPopupClose.addEventListener('click', closeAddPopup);
+addPopupClose.addEventListener('click', () => togglePopup(addFormModalWindow));
+
+
+
+//addButton.addEventListener('click', openAddForm);
+
+//editPopupClose.addEventListener('click', closeEditPopup);
+
+//addPopupClose.addEventListener('click', closeAddPopup);
 
 initialCards.forEach((card => {
     const cardElement = generateCard(card);

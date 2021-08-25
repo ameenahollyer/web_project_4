@@ -37,3 +37,4 @@
 @import url(../blocks/popup/__container/_type/popup__container_type_preview.css);
 @import url(../blocks/popup/__preview-image/popup__preview-image.css);
 @import url(../blocks/elements/__delete-button/elements__delete-button.css);
+@import url(../blocks/popup/__close/_type/popup__close_type_preview.css);
