@@ -2,3 +2,10 @@
     top: -50px;
     right: -45px;
 }
+
+@media screen and (max-width: 460px) {
+    .popup__close_type_preview {
+        right: 20px;
+        top: -60px;
+    }
+}
