@@ -55,6 +55,8 @@ const editPopupClose = document.querySelector('.popup__close_edit');
 
 const addPopupClose = document.querySelector('.popup__close_add');
 
+const previewPopupClose = document.querySelector('.popup__close_type_preview');
+
 const nameInput = editForm.querySelector('#name');
 
 const captionInput = editForm.querySelector('#caption');
@@ -66,6 +68,8 @@ const linkInput = addForm.querySelector('#link');
 const addButton = document.querySelector('.profile__add-button');
 
 const previewImageElement = previewModalWindow.querySelector('.popup__preview-image');
+
+const previewImageCaption = previewModalWindow.querySelector('.popup__preview-caption');
 
 
 /////////////////
@@ -151,6 +155,7 @@ function generateCard(card) {
     imageEl.addEventListener('click', () => {
         togglePopup(previewModalWindow);
         previewImageElement.src = card.link;
+        previewImageCaption.textContent = card.name;
     });
 
     return cardElement;
@@ -172,6 +177,8 @@ editPopupClose.addEventListener('click', () => togglePopup(editFormModalWindow))
 addButton.addEventListener('click', () => togglePopup(addFormModalWindow));
 
 addPopupClose.addEventListener('click', () => togglePopup(addFormModalWindow));
+
+previewPopupClose.addEventListener('click', () => togglePopup(previewModalWindow));
 
 
 
