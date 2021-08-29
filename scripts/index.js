@@ -1,26 +1,32 @@
 const initialCards = [{
         name: "Yosemite Valley",
-        link: "https://code.s3.yandex.net/web-code/yosemite.jpg"
+        link: "https://code.s3.yandex.net/web-code/yosemite.jpg",
+        alt: "picture of Yosemite Valley"
     },
     {
         name: "Lake Louise",
-        link: "https://code.s3.yandex.net/web-code/lake-louise.jpg"
+        link: "https://code.s3.yandex.net/web-code/lake-louise.jpg",
+        alt: "picture of Lake Louise"
     },
     {
         name: "Bald Mountains",
-        link: "https://code.s3.yandex.net/web-code/bald-mountains.jpg"
+        link: "https://code.s3.yandex.net/web-code/bald-mountains.jpg",
+        alt: "picture of the Bald Mountains"
     },
     {
         name: "Latemar",
-        link: "https://code.s3.yandex.net/web-code/latemar.jpg"
+        link: "https://code.s3.yandex.net/web-code/latemar.jpg",
+        alt: "picture of Latemar"
     },
     {
         name: "Vanoise National Park",
-        link: "https://code.s3.yandex.net/web-code/vanoise.jpg"
+        link: "https://code.s3.yandex.net/web-code/vanoise.jpg",
+        alt: "picture of Vanoise National Park"
     },
     {
         name: "Lago di Braies",
-        link: "https://code.s3.yandex.net/web-code/lago.jpg"
+        link: "https://code.s3.yandex.net/web-code/lago.jpg",
+        alt: "picture of Lago di Braies"
     }
 ];
 
@@ -102,6 +108,14 @@ function closeAddPopup() {
     addFormModalWindow.classList.remove('popup_opened');
 }
 
+function openModalWindow(modalWindow) {
+    modalWindow.classList.add('popup_opened')
+}
+
+function closeModalWindow(modalWindow) {
+    modalWindow.classList.remove('popup_opened')
+}
+
 function togglePopup(popup) {
     popup.classList.toggle('popup_opened');
 }
@@ -125,7 +139,7 @@ function addFormSubmit(evt) {
 }
 
 
-function activeLikeButton(evt) {
+function handleClickLikeButton(evt) {
     evt.target.classList.toggle('elements__button_active');
 }
 
@@ -146,7 +160,7 @@ function generateCard(card) {
         card.remove();
     });
 
-    likeButton.addEventListener('click', activeLikeButton);
+    likeButton.addEventListener('click', handleClickLikeButton);
 
     const imageEl = cardElement.querySelector('.elements__image');
     imageEl.src = card.link;
