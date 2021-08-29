@@ -100,14 +100,6 @@ function openAddForm() {
     addFormModalWindow.classList.add('popup_opened');
 }
 
-function closeEditPopup() {
-    editFormModalWindow.classList.remove('popup_opened');
-}
-
-function closeAddPopup() {
-    addFormModalWindow.classList.remove('popup_opened');
-}
-
 function openModalWindow(modalWindow) {
     modalWindow.classList.add('popup_opened')
 }
@@ -116,15 +108,11 @@ function closeModalWindow(modalWindow) {
     modalWindow.classList.remove('popup_opened')
 }
 
-function togglePopup(popup) {
-    popup.classList.toggle('popup_opened');
-}
-
 function editFormSubmit(evt) {
     evt.preventDefault();
     profileName.textContent = nameInput.value;
     profileCaption.textContent = captionInput.value;
-    closeEditPopup()
+    closeModalWindow(editFormModalWindow);
 }
 
 function addFormSubmit(evt) {
@@ -135,7 +123,7 @@ function addFormSubmit(evt) {
     }
     const newCardElement = generateCard(newCard);
     renderCard(newCardElement);
-    closeAddPopup();
+    closeModalWindow(addFormModalWindow);;
 }
 
 
@@ -167,7 +155,7 @@ function generateCard(card) {
     cardElement.querySelector('.elements__place').textContent = card.name;
 
     imageEl.addEventListener('click', () => {
-        togglePopup(previewModalWindow);
+        openModalWindow(previewModalWindow);
         previewImageElement.src = card.link;
         previewImageCaption.textContent = card.name;
     });
@@ -184,15 +172,15 @@ editForm.addEventListener('submit', editFormSubmit);
 
 addForm.addEventListener('submit', addFormSubmit);
 
-editButton.addEventListener('click', () => togglePopup(editFormModalWindow));
+editButton.addEventListener('click', () => openModalWindow(editFormModalWindow));
 
-editPopupClose.addEventListener('click', () => togglePopup(editFormModalWindow));
+editPopupClose.addEventListener('click', () => closeModalWindow(editFormModalWindow));
 
-addButton.addEventListener('click', () => togglePopup(addFormModalWindow));
+addButton.addEventListener('click', () => openModalWindow(addFormModalWindow));
 
-addPopupClose.addEventListener('click', () => togglePopup(addFormModalWindow));
+addPopupClose.addEventListener('click', () => closeModalWindow(addFormModalWindow));
 
-previewPopupClose.addEventListener('click', () => togglePopup(previewModalWindow));
+previewPopupClose.addEventListener('click', () => closeModalWindow(previewModalWindow));
 
 
 
