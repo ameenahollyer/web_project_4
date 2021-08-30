@@ -1,32 +1,26 @@
 const initialCards = [{
         name: "Yosemite Valley",
         link: "https://code.s3.yandex.net/web-code/yosemite.jpg",
-        alt: "picture of Yosemite Valley"
     },
     {
         name: "Lake Louise",
         link: "https://code.s3.yandex.net/web-code/lake-louise.jpg",
-        alt: "picture of Lake Louise"
     },
     {
         name: "Bald Mountains",
         link: "https://code.s3.yandex.net/web-code/bald-mountains.jpg",
-        alt: "picture of the Bald Mountains"
     },
     {
         name: "Latemar",
         link: "https://code.s3.yandex.net/web-code/latemar.jpg",
-        alt: "picture of Latemar"
     },
     {
         name: "Vanoise National Park",
         link: "https://code.s3.yandex.net/web-code/vanoise.jpg",
-        alt: "picture of Vanoise National Park"
     },
     {
         name: "Lago di Braies",
         link: "https://code.s3.yandex.net/web-code/lago.jpg",
-        alt: "picture of Lago di Braies"
     }
 ];
 
@@ -152,11 +146,13 @@ function generateCard(card) {
 
     const imageEl = cardElement.querySelector('.elements__image');
     imageEl.src = card.link;
+    imageEl.alt = card.name;
     cardElement.querySelector('.elements__place').textContent = card.name;
 
     imageEl.addEventListener('click', () => {
         openModalWindow(previewModalWindow);
         previewImageElement.src = card.link;
+        previewImageElement.alt = card.name;
         previewImageCaption.textContent = card.name;
     });
 
