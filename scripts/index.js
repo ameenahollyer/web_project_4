@@ -117,7 +117,7 @@ function addFormSubmit(evt) {
     }
     const newCardElement = generateCard(newCard);
     renderCard(newCardElement);
-    closeModalWindow(addFormModalWindow);;
+    closeModalWindow(addFormModalWindow);
 }
 
 
@@ -168,7 +168,7 @@ editForm.addEventListener('submit', editFormSubmit);
 
 addForm.addEventListener('submit', addFormSubmit);
 
-editButton.addEventListener('click', () => openModalWindow(editFormModalWindow));
+editButton.addEventListener('click', openEditForm);
 
 editPopupClose.addEventListener('click', () => closeModalWindow(editFormModalWindow));
 
