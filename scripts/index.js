@@ -84,16 +84,6 @@ const placesWrap = document.querySelector('.elements');
 ///functions
 /////////////////
 
-function openEditForm() {
-    editFormModalWindow.classList.add('popup_opened');
-    nameInput.value = profileName.textContent;
-    captionInput.value = profileCaption.textContent;
-}
-
-function openAddForm() {
-    addFormModalWindow.classList.add('popup_opened');
-}
-
 function openModalWindow(modalWindow) {
     modalWindow.classList.add('popup_opened')
 }
@@ -101,6 +91,13 @@ function openModalWindow(modalWindow) {
 function closeModalWindow(modalWindow) {
     modalWindow.classList.remove('popup_opened')
 }
+
+function openEditForm() {
+    openModalWindow(editFormModalWindow);
+    nameInput.value = profileName.textContent;
+    captionInput.value = profileCaption.textContent;
+}
+
 
 function editFormSubmit(evt) {
     evt.preventDefault();
@@ -177,14 +174,6 @@ addButton.addEventListener('click', () => openModalWindow(addFormModalWindow));
 addPopupClose.addEventListener('click', () => closeModalWindow(addFormModalWindow));
 
 previewPopupClose.addEventListener('click', () => closeModalWindow(previewModalWindow));
-
-
-
-//addButton.addEventListener('click', openAddForm);
-
-//editPopupClose.addEventListener('click', closeEditPopup);
-
-//addPopupClose.addEventListener('click', closeAddPopup);
 
 initialCards.forEach((card => {
     const cardElement = generateCard(card);

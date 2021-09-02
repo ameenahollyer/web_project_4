@@ -8,10 +8,10 @@
     justify-content: center;
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0s linear 0.5s, opacity 0.5s linear;
+    transition: visibility 0s linear 0.5s, opacity 0.5s, pointer-events 0s linear 0.5s;
+    ;
     z-index: 999;
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    pointer-events: none;
 }
