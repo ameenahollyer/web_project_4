@@ -1,25 +1,52 @@
-const showInputError = (inputElement) => {
-
+const showInputError = (inputElement, formElement, settings) => {
+    const errorSpan = formElement.querySelector('#' + inputElement.id + '-error');
+    errorSpan.textContent = inputElement.validationMessage;
+    inputElement.classList.add(settings.inputErrorClass);
+    errorSpan.classList.add(settings.errorClass);
 };
 
-const checkInputValidity = (inputElement) => {
+const hideInputError = (inputElement, formElement, settings) => {
+    const errorSpan = formElement.querySelector('#' + inputElement.id + '-error');
+    errorSpan.textContent = '';
+};
+
+const checkInputValidity = (inputElement, formElement, settings) => {
     if (!inputElement.validity.valid) {
-        showInputError(inputElement);
+        return showInputError(inputElement, formElement, settings);
         // if input is invalid, show error message
-    } else {
-        hideInputError();
     }
+    hideInputError(inputElement, formElement, settings);
     // if it is valid, remove all error messages. enable submit button
 };
 
-const setEventListeners = (form, settings) => {
+const hasInvalidInput = (inputElements) => {
+    return !inputElements.every(inputEl => {
+        return inputEl.validity.valid === true;
+    })
+}
+
+const toggleButtonState = (inputElements, submitButton, settings) => {
+    if (hasInvalidInput(inputElements)) {
+        //disable button
+        submitButton.disabled = true;
+        //add error class button
+
+    }
+}
+
+const setEventListeners = (formElement, { submitButtonSelector, ...rest }) => {
+    // grab submit button
+    const submitButton = document.querySelector(submitButtonSelector);
+    //const submitButton = formElement.querySelector('');
     // grab all inputs
-    const inputElements = Array.from(form.querySelectorAll(settings.inputSelector));
+    const inputElements = Array.from(formElement.querySelectorAll(rest.inputSelector));
     // loop through all inputs
     inputElements.forEach(inputElement => {
         inputElement.addEventListener("input", () => {
-            checkInputValidity(inputElement);
             // check validity
+            checkInputValidity(inputElement, formElement, rest);
+            // toggle button
+            toggleButtonState(inputElements, submitButton, rest);
         });
     });
 };

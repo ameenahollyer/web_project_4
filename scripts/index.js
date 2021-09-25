@@ -57,13 +57,13 @@ const addPopupClose = document.querySelector('.popup__close_add');
 
 const previewPopupClose = document.querySelector('.popup__close_type_preview');
 
-const nameInput = editForm.querySelector('#name');
+const nameInput = editForm.querySelector('#name-input');
 
-const captionInput = editForm.querySelector('#caption');
+const captionInput = editForm.querySelector('#caption-input');
 
-const placeInput = addForm.querySelector('#title');
+const placeInput = addForm.querySelector('#title-input');
 
-const linkInput = addForm.querySelector('#link');
+const linkInput = addForm.querySelector('#link-input');
 
 const addButton = document.querySelector('.profile__add-button');
 

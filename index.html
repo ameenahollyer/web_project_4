@@ -23,9 +23,11 @@
                 <h2 class="popup__title">Edit profile</h2>
                 <form class="popup__form popup__form_type_edit" name="form">
                     <fieldset class="popup__field">
-                        <input type="text" class="popup__input popup__input_type_name" placeholder="Name" id="name" minlength="2" maxlength="40" required>
-                        <span class="popup__error-message"></span>
-                        <input type="text" class="popup__input popup__input_type_info" placeholder="About me" id="caption" minlength="2" maxlength="200" required></fieldset>
+                        <input type="text" class="popup__input popup__input_type_name" placeholder="Name" id="name-input" minlength="2" maxlength="40" required>
+                        <span class="popup__error-message" id="name-input-error"></span>
+                        <input type="text" class="popup__input popup__input_type_info" placeholder="About me" id="caption-input" minlength="2" maxlength="200" required>
+                        <span class="popup__error-message" id="caption-input-error"></span>
+                    </fieldset>
                     <button class="popup__button" id="saveBtn">Save</button>
                 </form>
             </div>
@@ -37,8 +39,11 @@
                 <h2 class="popup__title">New Card</h2>
                 <form class="popup__form popup__form_type_add" name="form">
                     <fieldset class="popup__field">
-                        <input type="text" class="popup__input popup__input_type_title" placeholder="Title" id="title" minlength="1" maxlength="30" required>
-                        <input type="url" class="popup__input popup__input_type_link" placeholder="Link" id="link" required></fieldset>
+                        <input type="text" class="popup__input popup__input_type_title" placeholder="Title" id="title-input" minlength="1" maxlength="30" required>
+                        <span class="popup__error-message"></span>
+                        <input type="url" class="popup__input popup__input_type_link" placeholder="Link" id="link-input" required>
+                        <span class="popup__error-message"></span>
+                    </fieldset>
                     <button class="popup__button" id="submitBtn">Create</button>
                 </form>
             </div>
