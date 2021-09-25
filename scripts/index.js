@@ -72,6 +72,7 @@ const previewImageElement = previewModalWindow.querySelector('.popup__preview-im
 const previewImageCaption = previewModalWindow.querySelector('.popup__preview-caption');
 
 
+
 /////////////////
 /// Wrappers
 /////////////////

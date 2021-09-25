@@ -30,7 +30,11 @@ const toggleButtonState = (inputElements, submitButton, settings) => {
         //disable button
         submitButton.disabled = true;
         //add error class button
+        submitButton.classList.add(settings.inactiveButtonClass);
 
+    } else {
+        submitButton.disabled = false;
+        submitButton.classList.remove(settings.inactiveButtonClass);
     }
 }
 
