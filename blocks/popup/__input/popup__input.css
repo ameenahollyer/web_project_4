@@ -12,14 +12,15 @@
     line-height: 17px;
 }
 
-.popup__input:invalid {
+
+/*.popup__input:invalid {
     border-bottom: 1px solid #FF0000;
     margin-bottom: 5px;
 }
 
 .popup__input:invalid:last-of-type {
     margin-bottom: 31px;
-}
+}*/
 
 @media screen and (max-width: 320px) {
     .popup__input {

@@ -3,6 +3,7 @@ const showInputError = (inputElement, formElement, settings) => {
     errorSpan.textContent = inputElement.validationMessage;
     inputElement.classList.add(settings.inputErrorClass);
     errorSpan.classList.add(settings.errorClass);
+    console.log('error');
 };
 
 const hideInputError = (inputElement, formElement, settings) => {

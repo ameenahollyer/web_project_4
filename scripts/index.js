@@ -87,12 +87,23 @@ const placesWrap = document.querySelector('.elements');
 ///functions
 /////////////////
 
+function handleOverlayClose(e) {
+    const modalWindow = document.querySelector('.popup_opened');
+    if (e.target.classList.contains('popup')) {
+        closeModalWindow(modalWindow);
+    }
+}
+
 function openModalWindow(modalWindow) {
     modalWindow.classList.add('popup_opened')
+    document.addEventListener('keydown', escOverlay);
+    modalWindow.addEventListener('click', handleOverlayClose);
 }
 
 function closeModalWindow(modalWindow) {
     modalWindow.classList.remove('popup_opened')
+    document.removeEventListener('keydown', escOverlay);
+    modalWindow.removeEventListener('click', handleOverlayClose);
 }
 
 function openEditForm() {
@@ -161,9 +172,10 @@ function generateCard(card) {
 
 // close by overlay function
 
-function escOverlay(e) {
+function escOverlay(e, ) {
+    const modalWindow = document.querySelector('.popup_opened');
     if (e.key === "Escape") {
-        closeModalWindow();
+        closeModalWindow(modalWindow);
     }
 }
 
@@ -193,16 +205,9 @@ initialCards.forEach((card => {
 
 }));
 
-popupOverlay.addEventListener('click', () => closeModalWindow(popupOverlay));
 
 
 //closing by clicking on overlay
 
 
 //close by pressing esc
-
-document.addEventListener('keydown', function(event) {
-    if (event.key === "Escape") {
-        closeModalWindow(popupOverlay);
-    }
-});
