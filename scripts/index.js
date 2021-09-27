@@ -71,6 +71,8 @@ const previewImageElement = previewModalWindow.querySelector('.popup__preview-im
 
 const previewImageCaption = previewModalWindow.querySelector('.popup__preview-caption');
 
+const popupOverlay = document.querySelector('.popup');
+
 
 
 /////////////////
@@ -157,6 +159,14 @@ function generateCard(card) {
     return cardElement;
 }
 
+// close by overlay function
+
+function escOverlay(e) {
+    if (e.key === "Escape") {
+        closeModalWindow();
+    }
+}
+
 
 /////////////////
 ///Event Handlers
@@ -182,3 +192,17 @@ initialCards.forEach((card => {
     renderCard(cardElement);
 
 }));
+
+popupOverlay.addEventListener('click', () => closeModalWindow(popupOverlay));
+
+
+//closing by clicking on overlay
+
+
+//close by pressing esc
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === "Escape") {
+        closeModalWindow(popupOverlay);
+    }
+});

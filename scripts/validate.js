@@ -40,7 +40,7 @@ const toggleButtonState = (inputElements, submitButton, settings) => {
 
 const setEventListeners = (formElement, { submitButtonSelector, ...rest }) => {
     // grab submit button
-    const submitButton = document.querySelector(submitButtonSelector);
+    const submitButton = formElement.querySelector(submitButtonSelector);
     //const submitButton = formElement.querySelector('');
     // grab all inputs
     const inputElements = Array.from(formElement.querySelectorAll(rest.inputSelector));
