@@ -129,7 +129,7 @@ function addFormSubmit(evt) {
     const newCardElement = generateCard(newCard);
     renderCard(newCardElement);
     closeModalWindow(addFormModalWindow);
-    evt.reset();
+    evt.target.reset();
 }
 
 
@@ -187,7 +187,7 @@ function handleEscapeKey(e) {
 
 editForm.addEventListener('submit', editFormSubmit);
 
-addForm.addEventListener('submit', () => addFormSubmit);
+addForm.addEventListener('submit', addFormSubmit);
 
 editButton.addEventListener('click', openEditForm);
 
