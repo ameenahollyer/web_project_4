@@ -96,13 +96,13 @@ function handleOverlayClose(e) {
 
 function openModalWindow(modalWindow) {
     modalWindow.classList.add('popup_opened')
-    document.addEventListener('keydown', escOverlay);
+    document.addEventListener('keydown', handleEscapeKey);
     modalWindow.addEventListener('click', handleOverlayClose);
 }
 
 function closeModalWindow(modalWindow) {
     modalWindow.classList.remove('popup_opened')
-    document.removeEventListener('keydown', escOverlay);
+    document.removeEventListener('keydown', handleEscapeKey);
     modalWindow.removeEventListener('click', handleOverlayClose);
 }
 
@@ -129,6 +129,7 @@ function addFormSubmit(evt) {
     const newCardElement = generateCard(newCard);
     renderCard(newCardElement);
     closeModalWindow(addFormModalWindow);
+    evt.reset();
 }
 
 
@@ -172,7 +173,7 @@ function generateCard(card) {
 
 // close by overlay function
 
-function escOverlay(e, ) {
+function handleEscapeKey(e) {
     const modalWindow = document.querySelector('.popup_opened');
     if (e.key === "Escape") {
         closeModalWindow(modalWindow);
@@ -186,7 +187,7 @@ function escOverlay(e, ) {
 
 editForm.addEventListener('submit', editFormSubmit);
 
-addForm.addEventListener('submit', addFormSubmit);
+addForm.addEventListener('submit', () => addFormSubmit);
 
 editButton.addEventListener('click', openEditForm);
 
@@ -204,10 +205,3 @@ initialCards.forEach((card => {
     renderCard(cardElement);
 
 }));
-
-
-
-//closing by clicking on overlay
-
-
-//close by pressing esc
