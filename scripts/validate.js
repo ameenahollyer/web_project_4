@@ -9,6 +9,7 @@ const hideInputError = (inputElement, formElement, settings) => {
     const errorSpan = formElement.querySelector('#' + inputElement.id + '-error');
     errorSpan.textContent = '';
     errorSpan.classList.remove(settings.errorClass);
+    inputElement.classList.remove(settings.inputErrorClass);
 };
 
 const checkInputValidity = (inputElement, formElement, settings) => {
