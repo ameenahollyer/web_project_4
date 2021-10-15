@@ -45,7 +45,9 @@ class FormValidator {
 
         this._setEventListeners();
     }
-}
+};
+
+export default FormValidator;
 
 //const formValidationConfig = {
 //inputSelector: ".popup__input",
@@ -57,5 +59,3 @@ class FormValidator {
 
 //const addFormValidator = new FormValidator(formValidationConfig);
 //addFormValidator.enableValidation();
-
-export default FormValidator;

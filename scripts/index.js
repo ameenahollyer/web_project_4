@@ -1,4 +1,5 @@
 import FormValidator from "./formValidator.js";
+import Card from "./Card.js";
 
 const initialCards = [{
         name: "Yosemite Valley",
@@ -139,7 +140,8 @@ function handleClickLikeButton(evt) {
     evt.target.classList.toggle('elements__button_active');
 }
 
-function renderCard(cardEl) {
+function renderCard(data, cardEl) {
+    const card = new Card(data, "#card-template").generateCard();
     placesWrap.prepend(cardEl)
 }
 
