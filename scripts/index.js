@@ -1,3 +1,5 @@
+import FormValidator from "./formValidator.js";
+
 const initialCards = [{
         name: "Yosemite Valley",
         link: "https://code.s3.yandex.net/web-code/yosemite.jpg",
@@ -205,3 +207,21 @@ initialCards.forEach((card => {
     renderCard(cardElement);
 
 }));
+
+/// Validation
+const addFormEL = addFormModalWindow.querySelector('.popup__form');
+const editFormEL = editFormModalWindow.querySelector('.popup__form');
+
+const formValidationConfig = {
+    inputSelector: ".popup__input",
+    submitButtonSelector: ".popup__button",
+    inactiveButtonClass: "popup__button_disabled",
+    inputErrorClass: "popup__input_type_error",
+    errorClass: "popup__error_visible"
+}
+
+const addFormValidator = new FormValidator(formValidationConfig, addFormEL);
+addFormValidator.enableValidation();
+
+const editFormValidator = new FormValidator(formValidationConfig, addFormEL);
+editFormValidator.enableValidation();
