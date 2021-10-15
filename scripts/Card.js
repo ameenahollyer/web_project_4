@@ -7,17 +7,20 @@ class Card {
     }
 
     _getTemplate() {
-        const cardElement = document.querySelector(this._cardSelector).content.querySelector(".elements__card");
+        const cardElement = document.querySelector(".elements__card").cloneNode(true);
         return cardElement;
     }
 
     _setEventListeners() {
         //this is where we set up the events
+        console.warn("not done yet")
     }
 
     generateCard() {
         this.element = this._getTemplate();
-        console.log('card', this._element);
+        this._setEventListeners();
+
+        this._element.querySelector(".elements__image")
     }
 };
 
