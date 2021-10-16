@@ -140,9 +140,9 @@ function handleClickLikeButton(evt) {
     evt.target.classList.toggle('elements__button_active');
 }
 
-function renderCard(data, cardEl) {
+function renderCard(data, wrap) {
     const card = new Card(data, "#card-template").generateCard();
-    placesWrap.prepend(cardEl)
+    wrap.prepend(card);
 }
 
 

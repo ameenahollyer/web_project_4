@@ -11,6 +11,18 @@ class Card {
         return cardElement;
     }
 
+    _handleLikeIcon() {
+
+    }
+
+    _handleDeleteCard() {
+
+    }
+
+    _handlePreviewPicture() {
+
+    }
+
     _setEventListeners() {
         //this is where we set up the events
         console.warn("not done yet")
@@ -20,7 +32,10 @@ class Card {
         this.element = this._getTemplate();
         this._setEventListeners();
 
-        this._element.querySelector(".elements__image")
+        this._element.querySelector(".elements__image").style.backgroundImage = `url(${this._link})`;
+        this._element.querySelector(".elements__title").textContent = this._name;
+
+        return this._element;
     }
 };
 
