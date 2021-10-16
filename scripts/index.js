@@ -141,7 +141,7 @@ function handleClickLikeButton(evt) {
 }
 
 function renderCard(data, wrap) {
-    const card = new Card(data, "#card-template").generateCard();
+    const card = new Card(data, cardTemplate).generateCard();
     wrap.prepend(card);
 }
 
@@ -225,5 +225,5 @@ const formValidationConfig = {
 const addFormValidator = new FormValidator(formValidationConfig, addFormEL);
 addFormValidator.enableValidation();
 
-const editFormValidator = new FormValidator(formValidationConfig, addFormEL);
+const editFormValidator = new FormValidator(formValidationConfig, editFormEL);
 editFormValidator.enableValidation();

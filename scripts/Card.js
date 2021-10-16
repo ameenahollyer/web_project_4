@@ -29,14 +29,19 @@ class Card {
     }
 
     generateCard() {
-        this.element = this._getTemplate();
+        this._element = this._getTemplate();
         this._setEventListeners();
 
+        console.log(this._element);
+
+
         this._element.querySelector(".elements__image").style.backgroundImage = `url(${this._link})`;
-        this._element.querySelector(".elements__title").textContent = this._name;
+        this._element.querySelector(".elements__caption").textContent = this._name;
 
         return this._element;
     }
-};
+
+
+}
 
 export default Card;
