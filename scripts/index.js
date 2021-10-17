@@ -140,9 +140,10 @@ function handleClickLikeButton(evt) {
     evt.target.classList.toggle('elements__button_active');
 }
 
-function renderCard(data, wrap) {
-    const card = new Card(data, cardTemplate).generateCard();
-    wrap.prepend(card);
+function renderCard(data, cardEl) {
+    cardEl = new Card(data, "#card-template").generateCard();
+    placesWrap.prepend(cardEl)
+
 }
 
 
@@ -204,10 +205,9 @@ addPopupClose.addEventListener('click', () => closeModalWindow(addFormModalWindo
 previewPopupClose.addEventListener('click', () => closeModalWindow(previewModalWindow));
 
 initialCards.forEach((card => {
+
     const cardElement = generateCard(card);
-
     renderCard(cardElement);
-
 }));
 
 /// Validation
