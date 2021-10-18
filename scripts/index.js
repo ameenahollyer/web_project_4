@@ -140,41 +140,41 @@ function handleClickLikeButton(evt) {
     evt.target.classList.toggle('elements__button_active');
 }
 
-function renderCard(data, cardEl) {
-    cardEl = new Card(data, "#card-template").generateCard();
+function renderCard(cardEl) {
+    new Card(initialCards, '#card-template').generateCard();
     placesWrap.prepend(cardEl)
 
 }
 
 
-function generateCard(card) {
-    const cardElement = cardTemplate.cloneNode(true);
+//function generateCard(card) {
+//const cardElement = cardTemplate.cloneNode(true);
 
-    const likeButton = cardElement.querySelector('.elements__button');
+//const likeButton = cardElement.querySelector('.elements__button');
 
-    const deleteButton = cardElement.querySelector('.elements__delete-button');
+//const deleteButton = cardElement.querySelector('.elements__delete-button');
 
-    deleteButton.addEventListener("click", function() {
-        const card = deleteButton.closest(".elements__card");
-        card.remove();
-    });
+//deleteButton.addEventListener("click", function() {
+//const card = deleteButton.closest(".elements__card");
+// card.remove();
+//});
 
-    likeButton.addEventListener('click', handleClickLikeButton);
+//likeButton.addEventListener('click', handleClickLikeButton);
 
-    const imageEl = cardElement.querySelector('.elements__image');
-    imageEl.src = card.link;
-    imageEl.alt = card.name;
-    cardElement.querySelector('.elements__place').textContent = card.name;
+//const imageEl = cardElement.querySelector('.elements__image');
+//imageEl.src = card.link;
+//imageEl.alt = card.name;
+//cardElement.querySelector('.elements__place').textContent = card.name;
 
-    imageEl.addEventListener('click', () => {
-        openModalWindow(previewModalWindow);
-        previewImageElement.src = card.link;
-        previewImageElement.alt = card.name;
-        previewImageCaption.textContent = card.name;
-    });
+//imageEl.addEventListener('click', () => {
+//openModalWindow(previewModalWindow);
+//previewImageElement.src = card.link;
+//previewImageElement.alt = card.name;
+//previewImageCaption.textContent = card.name;
+//});
 
-    return cardElement;
-}
+//return cardElement;
+//}
 
 // close by overlay function
 
@@ -204,11 +204,13 @@ addPopupClose.addEventListener('click', () => closeModalWindow(addFormModalWindo
 
 previewPopupClose.addEventListener('click', () => closeModalWindow(previewModalWindow));
 
-initialCards.forEach((card => {
+initialCards.forEach((cardElement => {
 
-    const cardElement = generateCard(card);
+    //const cardElement = generateCard(card);
     renderCard(cardElement);
 }));
+
+
 
 /// Validation
 const addFormEL = addFormModalWindow.querySelector('.popup__form');
