@@ -24,20 +24,44 @@ class FormValidator {
         errorSpan.classList.remove(this._errorClass);
     }
 
+
     _checkInputValidity(inputElement) {
-
-    }
-
-    _toggleButtonState(inputList, buttonElement) {
-
+        if (!inputElement.validity.valid) {
+            return this._showInputError(inputElement);
+            // if input is invalid, show error message
+        }
+        this._hideInputError(inputElement);
+        // if it is valid, remove all error messages. enable submit button
     }
 
     _hasInvalidInput(inputList) {
-
+        return !inputList.every(inputEl => {
+            return inputEl.validity.valid === true;
+        })
     }
 
-    _setEventListeners() {
-        console.log("why");
+    _toggleButtonState(inputList, buttonElement) {
+        if (this._hasInvalidInput(inputList)) {
+            //disable button
+            buttonElement.disabled = true;
+            //add error class button
+            buttonElement.classList.add(this._inactiveButtonClass);
+
+        } else {
+            buttonElement.disabled = false;
+            buttonElement.classList.remove(this._inactiveButtonClass);
+        }
+    }
+
+    _setEventListeners(inputElements) {
+        inputElements.this._inputSelector(inputElement => {
+            inputElement.addEventListener("input", () => {
+                // check validity
+                checkInputValidity(inputElement);
+                // toggle button
+                toggleButtonState(inputElements);
+            });
+        });
     }
 
     enableValidation() {
