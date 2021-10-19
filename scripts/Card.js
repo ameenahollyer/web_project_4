@@ -1,7 +1,7 @@
 class Card {
     constructor(data, cardSelector) {
-        this._name = data._name;
-        this._link = data._link;
+        this._name = data.name;
+        this._link = data.link;
 
         this._cardSelector = cardSelector;
     }
@@ -35,8 +35,8 @@ class Card {
         console.log(this._element);
 
 
-        this._element.querySelector(".elements__image").style.backgroundImage = `url(${this._link})`;
-        this._element.querySelector(".elements__caption").textContent = this._name;
+        this._element.querySelector(".elements__image").src = this._link;
+        this._element.querySelector(".elements__place").textContent = this._name;
 
         return this._element;
     }

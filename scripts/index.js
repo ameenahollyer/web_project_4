@@ -130,7 +130,7 @@ function addFormSubmit(evt) {
         "link": linkInput.value
     }
     const newCardElement = generateCard(newCard);
-    renderCard(newCardElement);
+    renderCard(newCardElement, placesWrap);
     closeModalWindow(addFormModalWindow);
     evt.target.reset();
 }
@@ -140,9 +140,9 @@ function handleClickLikeButton(evt) {
     evt.target.classList.toggle('elements__button_active');
 }
 
-function renderCard(cardEl) {
-    new Card(initialCards, '#card-template').generateCard();
-    placesWrap.prepend(cardEl)
+function renderCard(data, wrap) {
+    const card = new Card(data, '#card-template').generateCard();
+    wrap.prepend(card)
 
 }
 
@@ -207,7 +207,7 @@ previewPopupClose.addEventListener('click', () => closeModalWindow(previewModalW
 initialCards.forEach((cardElement => {
 
     //const cardElement = generateCard(card);
-    renderCard(cardElement);
+    renderCard(cardElement, placesWrap);
 }));
 
 
