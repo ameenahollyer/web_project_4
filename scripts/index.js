@@ -50,7 +50,7 @@ const editFormModalWindow = document.querySelector('.popup_type_edit');
 
 const addFormModalWindow = document.querySelector('.popup_type_add');
 
-const previewModalWindow = document.querySelector('.popup_type_preview');
+//const previewModalWindow = document.querySelector('.popup_type_preview');
 
 const editButton = document.querySelector('.profile__edit-button');
 
@@ -70,9 +70,9 @@ const linkInput = addForm.querySelector('#link-input');
 
 const addButton = document.querySelector('.profile__add-button');
 
-const previewImageElement = previewModalWindow.querySelector('.popup__preview-image');
+//const previewImageElement = previewModalWindow.querySelector('.popup__preview-image');
 
-const previewImageCaption = previewModalWindow.querySelector('.popup__preview-caption');
+//const previewImageCaption = previewModalWindow.querySelector('.popup__preview-caption');
 
 const popupOverlay = document.querySelector('.popup');
 
@@ -97,17 +97,17 @@ function handleOverlayClose(e) {
     }
 }
 
-function openModalWindow(modalWindow) {
-    modalWindow.classList.add('popup_opened')
-    document.addEventListener('keydown', handleEscapeKey);
-    modalWindow.addEventListener('click', handleOverlayClose);
-}
+//function openModalWindow(modalWindow) {
+//modalWindow.classList.add('popup_opened')
+//document.addEventListener('keydown', handleEscapeKey);
+//modalWindow.addEventListener('click', handleOverlayClose);
+//}
 
-function closeModalWindow(modalWindow) {
-    modalWindow.classList.remove('popup_opened')
-    document.removeEventListener('keydown', handleEscapeKey);
-    modalWindow.removeEventListener('click', handleOverlayClose);
-}
+//function closeModalWindow(modalWindow) {
+// modalWindow.classList.remove('popup_opened')
+//document.removeEventListener('keydown', handleEscapeKey);
+//modalWindow.removeEventListener('click', handleOverlayClose);
+//}
 
 function openEditForm() {
     openModalWindow(editFormModalWindow);
@@ -136,9 +136,9 @@ function addFormSubmit(evt) {
 }
 
 
-function handleClickLikeButton(evt) {
-    evt.target.classList.toggle('elements__button_active');
-}
+//function handleClickLikeButton(evt) {
+//evt.target.classList.toggle('elements__button_active');
+//}
 
 function renderCard(data, wrap) {
     const card = new Card(data, '#card-template').generateCard();
@@ -178,12 +178,12 @@ function renderCard(data, wrap) {
 
 // close by overlay function
 
-function handleEscapeKey(e) {
-    const modalWindow = document.querySelector('.popup_opened');
-    if (e.key === "Escape") {
-        closeModalWindow(modalWindow);
-    }
-}
+//function handleEscapeKey(e) {
+//const modalWindow = document.querySelector('.popup_opened');
+//if (e.key === "Escape") {
+// closeModalWindow(modalWindow);
+//}
+//}
 
 
 /////////////////

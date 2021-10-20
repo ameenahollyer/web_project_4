@@ -1,3 +1,28 @@
+const previewModalWindow = document.querySelector('.popup_type_preview');
+const previewImageElement = previewModalWindow.querySelector('.popup__preview-image');
+
+const previewImageCaption = previewModalWindow.querySelector('.popup__preview-caption');
+
+
+function openModalWindow(modalWindow) {
+    modalWindow.classList.add('popup_opened')
+    document.addEventListener('keydown', handleEscapeKey);
+    modalWindow.addEventListener('click', handleOverlayClose);
+}
+
+function closeModalWindow(modalWindow) {
+    modalWindow.classList.remove('popup_opened')
+    document.removeEventListener('keydown', handleEscapeKey);
+    modalWindow.removeEventListener('click', handleOverlayClose);
+}
+
+function handleEscapeKey(e) {
+    const modalWindow = document.querySelector('.popup_opened');
+    if (e.key === "Escape") {
+        closeModalWindow(modalWindow);
+    }
+}
+
 class Card {
     constructor(data, cardSelector) {
         this._name = data.name;
@@ -12,11 +37,16 @@ class Card {
     }
 
     _handleLikeIcon() {
-
+        this._element.querySelector(".elements__button").classList.toggle("elements__button_active");
     }
 
     _handleDeleteCard() {
+        const deleteButton = this._element.querySelector('.elements__delete-button');
 
+        deleteButton.addEventListener("click", () => {
+            const card = deleteButton.closest(".elements__card");
+            card.remove();
+        });
     }
 
     _handlePreviewPicture() {
@@ -24,7 +54,11 @@ class Card {
     }
 
     _setEventListeners() {
-        //this is where we set up the events
+
+        this._element.querySelector(".elements__button").addEventListener("click", () => { this._handleLikeIcon() });
+
+        this._element.querySelector(".elements__delete-button").addEventListener("click", () => { this._handleDeleteCard() });
+
         console.warn("not done yet")
     }
 
