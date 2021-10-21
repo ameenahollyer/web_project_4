@@ -126,17 +126,17 @@ function editFormSubmit(evt) {
     closeModalWindow(editFormModalWindow);
 }
 
-function addFormSubmit(evt) {
-    evt.preventDefault();
-    const newCard = {
-        "name": placeInput.value,
-        "link": linkInput.value
-    }
-    const newCardElement = generateCard(newCard);
-    renderCard(newCardElement, placesWrap);
-    closeModalWindow(addFormModalWindow);
-    evt.target.reset();
-}
+//function addFormSubmit(evt) {
+// evt.preventDefault();
+//const newCard = {
+// "name": placeInput.value,
+//"link": linkInput.value
+// }
+//// const newCardElement = generateCard(newCard);
+//renderCard(newCardElement, placesWrap);
+//closeModalWindow(addFormModalWindow);
+//// evt.target.reset();
+//}
 
 
 //function handleClickLikeButton(evt) {
@@ -148,6 +148,7 @@ function renderCard(data, wrap) {
     wrap.prepend(card)
 
 }
+
 
 
 //function generateCard(card) {
@@ -195,7 +196,7 @@ function renderCard(data, wrap) {
 
 editForm.addEventListener('submit', editFormSubmit);
 
-addForm.addEventListener('submit', addFormSubmit);
+//addForm.addEventListener('submit', addFormSubmit);
 
 editButton.addEventListener('click', openEditForm);
 

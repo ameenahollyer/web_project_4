@@ -3,6 +3,12 @@ const previewImageElement = previewModalWindow.querySelector('.popup__preview-im
 
 const previewImageCaption = previewModalWindow.querySelector('.popup__preview-caption');
 
+const addForm = document.querySelector('.popup__form_type_add');
+
+const placeInput = addForm.querySelector('#title-input');
+
+const linkInput = addForm.querySelector('#link-input');
+
 
 export function openModalWindow(modalWindow) {
     modalWindow.classList.add('popup_opened')
@@ -78,6 +84,8 @@ class Card {
         this._element.querySelector(".elements__delete-button").addEventListener("click", () => { this._handleDeleteCard() });
 
         this._element.querySelector(".elements__image").addEventListener("click", () => { this._handlePreviewPicture() });
+
+        addForm.addEventListener('submit', addFormSubmit);
     }
 
     generateCard() {
