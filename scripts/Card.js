@@ -41,15 +41,14 @@ class Card {
     }
 
     _handleDeleteCard() {
-        const deleteButton = this._element.querySelector('.elements__delete-button');
-
-        deleteButton.addEventListener("click", () => {
-            const card = deleteButton.closest(".elements__card");
-            card.remove();
-        });
+        this._element.remove();
     }
 
     _handlePreviewPicture() {
+        openModalWindow(previewModalWindow);
+        previewImageElement.src = this._data.link;
+        previewImageElement.alt = this._data.name;
+        previewImageCaption.textContent = this._data.name;
 
     }
 
@@ -59,7 +58,7 @@ class Card {
 
         this._element.querySelector(".elements__delete-button").addEventListener("click", () => { this._handleDeleteCard() });
 
-        console.warn("not done yet")
+        this._element.querySelector(".elements__image").addEventListener("click", () => { this._handlePreviewPicture() });
     }
 
     generateCard() {
