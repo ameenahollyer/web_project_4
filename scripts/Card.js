@@ -4,13 +4,13 @@ const previewImageElement = previewModalWindow.querySelector('.popup__preview-im
 const previewImageCaption = previewModalWindow.querySelector('.popup__preview-caption');
 
 
-function openModalWindow(modalWindow) {
+export function openModalWindow(modalWindow) {
     modalWindow.classList.add('popup_opened')
     document.addEventListener('keydown', handleEscapeKey);
     modalWindow.addEventListener('click', handleOverlayClose);
 }
 
-function closeModalWindow(modalWindow) {
+export function closeModalWindow(modalWindow) {
     modalWindow.classList.remove('popup_opened')
     document.removeEventListener('keydown', handleEscapeKey);
     modalWindow.removeEventListener('click', handleOverlayClose);
@@ -21,6 +21,25 @@ function handleEscapeKey(e) {
     if (e.key === "Escape") {
         closeModalWindow(modalWindow);
     }
+}
+
+function handleOverlayClose(e) {
+    const modalWindow = document.querySelector('.popup_opened');
+    if (e.target.classList.contains('popup')) {
+        closeModalWindow(modalWindow);
+    }
+}
+
+function addFormSubmit(evt) {
+    evt.preventDefault();
+    const newCard = {
+        "name": placeInput.value,
+        "link": linkInput.value
+    }
+    const newCardElement = generateCard(newCard);
+    renderCard(newCardElement, placesWrap);
+    closeModalWindow(addFormModalWindow);
+    evt.target.reset();
 }
 
 class Card {
@@ -46,9 +65,9 @@ class Card {
 
     _handlePreviewPicture() {
         openModalWindow(previewModalWindow);
-        previewImageElement.src = this._data.link;
-        previewImageElement.alt = this._data.name;
-        previewImageCaption.textContent = this._data.name;
+        previewImageElement.src = this._link;
+        previewImageElement.alt = this._name;
+        previewImageCaption.textContent = this.name;
 
     }
 

@@ -1,5 +1,6 @@
 import FormValidator from "./formValidator.js";
 import Card from "./Card.js";
+import { openModalWindow, closeModalWindow } from "./Card.js";
 
 const initialCards = [{
         name: "Yosemite Valley",
@@ -76,6 +77,8 @@ const addButton = document.querySelector('.profile__add-button');
 
 const popupOverlay = document.querySelector('.popup');
 
+const previewModalWindow = document.querySelector('.popup_type_preview');
+
 
 
 /////////////////
@@ -90,12 +93,12 @@ const placesWrap = document.querySelector('.elements');
 ///functions
 /////////////////
 
-function handleOverlayClose(e) {
-    const modalWindow = document.querySelector('.popup_opened');
-    if (e.target.classList.contains('popup')) {
-        closeModalWindow(modalWindow);
-    }
-}
+//function handleOverlayClose(e) {
+//const modalWindow = document.querySelector('.popup_opened');
+// if (e.target.classList.contains('popup')) {
+// closeModalWindow(modalWindow);
+////}
+//}
 
 //function openModalWindow(modalWindow) {
 //modalWindow.classList.add('popup_opened')
