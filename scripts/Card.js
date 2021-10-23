@@ -1,3 +1,6 @@
+import { openModalWindow, closeModalWindow } from "./utils.js";
+import { formValidationConfig } from "./index.js";
+
 const previewModalWindow = document.querySelector('.popup_type_preview');
 const previewImageElement = previewModalWindow.querySelector('.popup__preview-image');
 
@@ -9,40 +12,18 @@ const placeInput = addForm.querySelector('#title-input');
 
 const linkInput = addForm.querySelector('#link-input');
 
+const addFormEL = document.querySelector('.popup__form');
 
-export function openModalWindow(modalWindow) {
-    modalWindow.classList.add('popup_opened')
-    document.addEventListener('keydown', handleEscapeKey);
-    modalWindow.addEventListener('click', handleOverlayClose);
-}
-
-export function closeModalWindow(modalWindow) {
-    modalWindow.classList.remove('popup_opened')
-    document.removeEventListener('keydown', handleEscapeKey);
-    modalWindow.removeEventListener('click', handleOverlayClose);
-}
-
-function handleEscapeKey(e) {
-    const modalWindow = document.querySelector('.popup_opened');
-    if (e.key === "Escape") {
-        closeModalWindow(modalWindow);
-    }
-}
-
-function handleOverlayClose(e) {
-    const modalWindow = document.querySelector('.popup_opened');
-    if (e.target.classList.contains('popup')) {
-        closeModalWindow(modalWindow);
-    }
-}
 
 function addFormSubmit(evt) {
     evt.preventDefault();
-    const newCard = {
-        "name": placeInput.value,
-        "link": linkInput.value
-    }
-    const newCardElement = generateCard(newCard);
+    //const newCard = {
+    // "name": placeInput.value,
+    // "link": linkInput.value
+    //}
+
+    const newCard = new Card(formValidationConfig, addFormEL);
+    const newCardElement = newCard.generateCard();
     renderCard(newCardElement, placesWrap);
     closeModalWindow(addFormModalWindow);
     evt.target.reset();
@@ -97,6 +78,7 @@ class Card {
 
         this._element.querySelector(".elements__image").src = this._link;
         this._element.querySelector(".elements__place").textContent = this._name;
+        this._element.querySelector(".elements__place").alt = this._name;
 
         return this._element;
     }
