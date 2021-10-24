@@ -1,3 +1,5 @@
+import { renderCard } from "./index.js";
+
 export function openModalWindow(modalWindow) {
     modalWindow.classList.add('popup_opened')
     document.addEventListener('keydown', handleEscapeKey);
@@ -22,4 +24,18 @@ export function handleOverlayClose(e) {
     if (e.target.classList.contains('popup')) {
         closeModalWindow(modalWindow);
     }
+}
+
+export function addFormSubmit(evt) {
+    evt.preventDefault();
+    //const newCard = {
+    // "name": placeInput.value,
+    // "link": linkInput.value
+    //}
+
+    const newCard = new Card(formValidationConfig, addFormEL);
+    const newCardElement = newCard.generateCard();
+    renderCard(newCardElement, placesWrap);
+    closeModalWindow(addFormModalWindow);
+    evt.target.reset();
 }

@@ -1,6 +1,6 @@
 import FormValidator from "./formValidator.js";
 import Card from "./Card.js";
-import { openModalWindow, closeModalWindow } from "./utils.js";
+import { openModalWindow, closeModalWindow, addFormSubmit } from "./utils.js";
 
 const initialCards = [{
         name: "Yosemite Valley",
@@ -64,6 +64,8 @@ const addButton = document.querySelector('.profile__add-button');
 
 const previewModalWindow = document.querySelector('.popup_type_preview');
 
+const addForm = document.querySelector('.popup__form_type_add');
+
 
 
 /////////////////
@@ -93,7 +95,7 @@ function editFormSubmit(evt) {
     closeModalWindow(editFormModalWindow);
 }
 
-function renderCard(data, wrap) {
+export function renderCard(data, wrap) {
     const card = new Card(data, '#card-template').generateCard();
     wrap.prepend(card)
 
@@ -112,6 +114,8 @@ editButton.addEventListener('click', openEditForm);
 editPopupClose.addEventListener('click', () => closeModalWindow(editFormModalWindow));
 
 addButton.addEventListener('click', () => openModalWindow(addFormModalWindow));
+
+addForm.addEventListener('submit', addFormSubmit);
 
 addPopupClose.addEventListener('click', () => closeModalWindow(addFormModalWindow));
 

@@ -6,28 +6,6 @@ const previewImageElement = previewModalWindow.querySelector('.popup__preview-im
 
 const previewImageCaption = previewModalWindow.querySelector('.popup__preview-caption');
 
-const addForm = document.querySelector('.popup__form_type_add');
-
-const placeInput = addForm.querySelector('#title-input');
-
-const linkInput = addForm.querySelector('#link-input');
-
-const addFormEL = document.querySelector('.popup__form');
-
-
-function addFormSubmit(evt) {
-    evt.preventDefault();
-    //const newCard = {
-    // "name": placeInput.value,
-    // "link": linkInput.value
-    //}
-
-    const newCard = new Card(formValidationConfig, addFormEL);
-    const newCardElement = newCard.generateCard();
-    renderCard(newCardElement, placesWrap);
-    closeModalWindow(addFormModalWindow);
-    evt.target.reset();
-}
 
 class Card {
     constructor(data, cardSelector) {
@@ -54,7 +32,7 @@ class Card {
         openModalWindow(previewModalWindow);
         previewImageElement.src = this._link;
         previewImageElement.alt = this._name;
-        previewImageCaption.textContent = this.name;
+        previewImageCaption.textContent = this._name;
 
     }
 
@@ -66,7 +44,6 @@ class Card {
 
         this._element.querySelector(".elements__image").addEventListener("click", () => { this._handlePreviewPicture() });
 
-        addForm.addEventListener('submit', addFormSubmit);
     }
 
     generateCard() {
