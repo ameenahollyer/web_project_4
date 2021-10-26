@@ -1,6 +1,5 @@
 import FormValidator from "./formValidator.js";
-import Card from "./Card.js";
-import { openModalWindow, closeModalWindow, addFormSubmit } from "./utils.js";
+import { openModalWindow, closeModalWindow, addFormSubmit, renderCard, placesWrap, addFormModalWindow } from "./utils.js";
 
 const initialCards = [{
         name: "Yosemite Valley",
@@ -46,8 +45,6 @@ const editForm = document.querySelector('.popup__form_type_edit');
 
 const editFormModalWindow = document.querySelector('.popup_type_edit');
 
-const addFormModalWindow = document.querySelector('.popup_type_add');
-
 const editButton = document.querySelector('.profile__edit-button');
 
 const editPopupClose = document.querySelector('.popup__close_edit');
@@ -68,13 +65,6 @@ const addForm = document.querySelector('.popup__form_type_add');
 
 
 
-/////////////////
-/// Wrappers
-/////////////////
-
-const placesWrap = document.querySelector('.elements');
-
-
 
 /////////////////
 ///functions
@@ -93,12 +83,6 @@ function editFormSubmit(evt) {
     profileName.textContent = nameInput.value;
     profileCaption.textContent = captionInput.value;
     closeModalWindow(editFormModalWindow);
-}
-
-export function renderCard(data, wrap) {
-    const card = new Card(data, '#card-template').generateCard();
-    wrap.prepend(card)
-
 }
 
 
