@@ -1,5 +1,3 @@
-import Card from "./Card.js";
-
 export const placesWrap = document.querySelector('.elements');
 
 export const addFormModalWindow = document.querySelector('.popup_type_add');
@@ -28,22 +26,4 @@ export function handleOverlayClose(e) {
     if (e.target.classList.contains('popup')) {
         closeModalWindow(modalWindow);
     }
-}
-
-export function addFormSubmit(evt) {
-    evt.preventDefault();
-    const newCard = {
-        "name": document.querySelector(".popup__input_type_title").value,
-        "link": document.querySelector(".popup__input_type_link").value,
-    }
-    console.log(evt);
-    renderCard(newCard, placesWrap);
-    closeModalWindow(addFormModalWindow);
-    evt.target.reset();
-}
-
-export function renderCard(data, wrap) {
-    const card = new Card(data, '#card-template').generateCard();
-    wrap.prepend(card)
-
 }

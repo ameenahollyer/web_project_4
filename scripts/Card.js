@@ -1,5 +1,5 @@
-import { openModalWindow, closeModalWindow } from "./utils.js";
-import { formValidationConfig } from "./index.js";
+import { openModalWindow } from "./utils.js";
+
 
 const previewModalWindow = document.querySelector('.popup_type_preview');
 const previewImageElement = previewModalWindow.querySelector('.popup__preview-image');
