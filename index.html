@@ -23,9 +23,11 @@
                 <h2 class="popup__title">Edit profile</h2>
                 <form class="popup__form popup__form_type_edit" name="form" novalidate>
                     <fieldset class="popup__field">
-                        <input type="text" class="popup__input popup__input_type_name" placeholder="Name" id="name-input" minlength="2" maxlength="40" required>
-                        <span class="popup__error-message" id="name-input-error"></span>
                         <label class="popup__label">
+                        <input type="text" class="popup__input popup__input_type_name" placeholder="Name" id="name-input" minlength="2" maxlength="40" required>
+                        <span class="popup__error-message" id="name-input-error"></span></label>
+                    </fieldset>
+                    <label class="popup__label">
                         <input type="text" class="popup__input popup__input_type_info" placeholder="About me" id="caption-input" minlength="2" maxlength="200" required>
                         <span class="popup__error-message" id="caption-input-error"></span>
                     </label>
@@ -41,8 +43,9 @@
                 <h2 class="popup__title">New Card</h2>
                 <form class="popup__form popup__form_type_add" name="form" novalidate>
                     <fieldset class="popup__field">
+                        <label class="popup__label">
                         <input type="text" class="popup__input popup__input_type_title" placeholder="Title" id="title-input" minlength="1" maxlength="30" required>
-                        <span class="popup__error-message" id="title-input-error"></span>
+                        <span class="popup__error-message" id="title-input-error"></span></label>
                         <label class="popup__label">
                         <input type="url" class="popup__input popup__input_type_link" placeholder="Link" id="link-input" required>
                         <span class="popup__error-message" id="link-input-error"></span></label>
