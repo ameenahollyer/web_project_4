@@ -64,9 +64,9 @@ const previewModalWindow = document.querySelector('.popup_type_preview');
 
 const addForm = document.querySelector('.popup__form_type_add');
 
-const cardTitleInput = document.querySelector(".popup__input_type_title").value;
+const cardTitleInput = document.querySelector(".popup__input_type_title");
 
-const cardLinkInput = document.querySelector(".popup__input_type_link").value;
+const cardLinkInput = document.querySelector(".popup__input_type_link");
 
 
 
