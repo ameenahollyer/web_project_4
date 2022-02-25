@@ -1,7 +1,8 @@
 class PopupWithForm extends Popup {
-    constructor(popupSelector, popupOpenClass, addFormSubmitCallback) {
+    constructor({ popupSelector, popupOpenClass, addFormSubmitCallback }) {
         super(popupSelector, popupOpenClass);
         this._formInputs = this._popupElement.querySelectorAll(".popup__input");
+        this._addFormSubmitCallback = addFormSubmitCallback;
 
     }
 
@@ -19,21 +20,25 @@ class PopupWithForm extends Popup {
 
     setEventListeners() {
         // add escape listener
-        this._popupElement.addEventListener('click', (evt) => {
-            if (evt.target.classList.contains('popup') ||
-                evt.target.classList.contains('popup__close')) {
-                this.close();
-            }
-        })
+        super.setEventListeners();
 
         //add submit event handler to form
+        this._popupElement.addEventListener("submit", (evt) => {
+            evt.preventDefault();
+            this._addFormSubmitCallback(this._getInputValues());
+        })
+
+
         //add click event listener to close icon
+        this._popupElement.addEventListener("click", () => {
+            this._close();
+        })
 
     }
 
     close() {
         super.close();
-        this.reset();
+        this._popupElement.reset();
 
     }
 }

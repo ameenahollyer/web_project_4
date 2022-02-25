@@ -155,3 +155,11 @@ addFormValidator.enableValidation();
 
 const editFormValidator = new FormValidator(formValidationConfig, editFormEL);
 editFormValidator.enableValidation();
+
+const addPopup = new PopupWithForm({
+    popupSelector: ".popup_type_add",
+    popupOpenClass: ".popup_opened",
+    addFormSubmitCallback: (inputData) => {
+
+    }
+});
