@@ -1,4 +1,4 @@
-import { openModalWindow } from "./utils.js";
+import { openModalWindow } from "../scripts/utils.js";
 
 
 const previewModalWindow = document.querySelector('.popup_type_preview');
@@ -8,7 +8,7 @@ const previewImageCaption = previewModalWindow.querySelector('.popup__preview-ca
 
 
 class Card {
-    constructor(data, cardSelector) {
+    constructor(data, cardSelector, handleCardClick) {
         this._name = data.name;
         this._link = data.link;
 
@@ -43,6 +43,8 @@ class Card {
         this._element.querySelector(".elements__delete-button").addEventListener("click", () => { this._handleDeleteCard() });
 
         this._element.querySelector(".elements__image").addEventListener("click", () => { this._handlePreviewPicture() });
+
+        this._element.querySelector(".elements__image").addEventListener("click", () => {});
 
     }
 

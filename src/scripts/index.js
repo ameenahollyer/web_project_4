@@ -1,6 +1,7 @@
-import FormValidator from "./formValidator.js";
+import "../pages/index.css"
+import FormValidator from "../components/FormValidator.js";
 import { openModalWindow, closeModalWindow, placesWrap, addFormModalWindow } from "./utils.js";
-import Card from "./Card.js";
+import Card from "../components/Card.js";
 
 const initialCards = [{
         name: "Yosemite Valley",
